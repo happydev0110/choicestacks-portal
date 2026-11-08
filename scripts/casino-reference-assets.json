@@ -1,0 +1,530 @@
+{
+  "banner": "/_next/static/media/casino-banner.a71990e3.webp",
+  "categories": [
+    {
+      "href": "/slots",
+      "name": "Slots",
+      "src": "/_next/static/media/cat3d-slots.cd4b952b.png"
+    },
+    {
+      "href": "/live",
+      "name": "Live Casino",
+      "src": "/_next/static/media/cat3d-live.acad90ea.png"
+    },
+    {
+      "href": "/crash-instant",
+      "name": "Crash & Instant",
+      "src": "/_next/static/media/cat3d-crash.cd02f732.png"
+    },
+    {
+      "href": "/table-cards",
+      "name": "Table & Cards",
+      "src": "/_next/static/media/cat3d-blackjack.b4cf0fdd.png"
+    },
+    {
+      "href": "/lotto-scratch",
+      "name": "Lotto & Scratch",
+      "src": "/_next/static/media/cat3d-roulette.329aa2e7.png"
+    }
+  ],
+  "rows": [
+    {
+      "items": [
+        {
+          "name": "French Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/fb728c709add.png"
+        },
+        {
+          "name": "Aviator",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/9cb57d01405c.png"
+        },
+        {
+          "name": "3 Charge Bison",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/59c11a148169.jpg"
+        },
+        {
+          "name": "Mines",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/3cec1767b391.png"
+        },
+        {
+          "name": "Luxury Life",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/388492e90cff.png"
+        },
+        {
+          "name": "Age Of Seth 94",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/f47893015922.png"
+        },
+        {
+          "name": "Butterfly Blossom",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/445419745e6a.png"
+        },
+        {
+          "name": "American Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/ba2fe9ed6913.png"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d6ec95abdd4b.jpg"
+        },
+        {
+          "name": "Mega Fishing",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/47abbb9a33ff.jpg"
+        },
+        {
+          "name": "Bad Rhinos",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/9c4db10d121f.jpg"
+        },
+        {
+          "name": "Age of Dragons Mini-Max",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/ec4ef5f0ee04.png"
+        },
+        {
+          "name": "Wild Heart",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/aa2fb016b290.png"
+        },
+        {
+          "name": "Fortune Tiger",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/62d453b3da8f.png"
+        },
+        {
+          "name": "Alchemy Gold",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/eb3980c4b14f.png"
+        }
+      ],
+      "title": "Popular Games"
+    },
+    {
+      "items": [
+        {
+          "name": "Age Of Seth 94",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/f47893015922.png"
+        },
+        {
+          "name": "Adventures",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/23e736a5bcfb.png"
+        },
+        {
+          "name": "Age of Dragons Mini-Max",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/ec4ef5f0ee04.png"
+        },
+        {
+          "name": "Agent Ace",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/322a735d1e89.jpg"
+        },
+        {
+          "name": "Luxury Life",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/388492e90cff.png"
+        },
+        {
+          "name": "American Sevens",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/8675de1d6c5f.png"
+        },
+        {
+          "name": "Alchemy Gold",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/eb3980c4b14f.png"
+        },
+        {
+          "name": "All Ways Egypt",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/c2e2384901e5.jpg"
+        },
+        {
+          "name": "Always Hot",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/72ec6177fe77.png"
+        },
+        {
+          "name": "Amazons' Battle",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/5b796ada4c7f.jpg"
+        },
+        {
+          "name": "Alice: Time Rift",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/a46f65c149aa.jpg"
+        },
+        {
+          "name": "AFK Airport Security",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/0a83bc799347.jpg"
+        },
+        {
+          "name": "Arizona Heist: Hold and Win",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/5905ce6d81e1.png"
+        },
+        {
+          "name": "Angels and Demons",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/11f07c55b2de.png"
+        },
+        {
+          "name": "Arcane Woods",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/95c916433534.jpg"
+        },
+        {
+          "name": "Abrakadabra",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/16eae2ecc02d.png"
+        },
+        {
+          "name": "Brew Brothers: Xmas Brew",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/7b32efda9743.png"
+        },
+        {
+          "name": "Age Of Seth",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/8ffd13f432f2.png"
+        },
+        {
+          "name": "Banana Farm",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/37605d2c5b9b.png"
+        },
+        {
+          "name": "A Dozen Jackpots",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/6acad1cba4a1.jpg"
+        }
+      ],
+      "title": "Slots"
+    },
+    {
+      "items": [
+        {
+          "name": "American Football Auto Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/71935556e70f.png"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d6ec95abdd4b.jpg"
+        },
+        {
+          "name": "Baccarat",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/2fd44406d900.jpg"
+        },
+        {
+          "name": "AutoRoulette 2",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/91c7718fded4.jpg"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/79802d6c1cca.png"
+        },
+        {
+          "name": "Auto Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d30b249ff516.jpg"
+        },
+        {
+          "name": "Bet on Poker",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/60d28ffdbe46.jpg"
+        },
+        {
+          "name": "AutoRoulette Lounge",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/14a3e07ccb00.jpg"
+        },
+        {
+          "name": "Auto Claw Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/a243191aaff0.png"
+        },
+        {
+          "name": "Blackjack 10",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/432579896b17.jpg"
+        },
+        {
+          "name": "Dynamite Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/b53e19534b65.jpg"
+        },
+        {
+          "name": "Bet with Streamers",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/8d683bae98ba.png"
+        },
+        {
+          "name": "Golden Treasure",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1b6d345f64e8.jpg"
+        },
+        {
+          "name": "Wheel of Fortune",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/64bbf85a5d77.jpg"
+        },
+        {
+          "name": "Magic Wheel",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/32070ec1a4d3.png"
+        },
+        {
+          "name": "Jungle Wheel",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/a7b77c5b1df3.png"
+        },
+        {
+          "name": "Wheel",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/8caa51539824.png"
+        },
+        {
+          "name": "Wheel of Fortune",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/33cae83bc6d2.png"
+        },
+        {
+          "name": "Wheel of Destiny",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1008324a7b50.png"
+        },
+        {
+          "name": "Football Duel",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/bcc4aa5c67b1.jpg"
+        }
+      ],
+      "title": "Live Casino"
+    },
+    {
+      "items": [
+        {
+          "name": "AviaFly 2",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/0d310d6bbe00.jpg"
+        },
+        {
+          "name": "Adrenaline Rush: Scratch",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/dbe13e3f6e26.png"
+        },
+        {
+          "name": "All-star Fishing",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d8552908f8db.jpg"
+        },
+        {
+          "name": "Atlantis",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/8ed8a427f772.png"
+        },
+        {
+          "name": "Balloon Mania",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1d075128c6a2.png"
+        },
+        {
+          "name": "Avia Star",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/154a0ef31397.png"
+        },
+        {
+          "name": "Aviator",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/9cb57d01405c.png"
+        },
+        {
+          "name": "Football Grid",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1a0a45cb105a.jpg"
+        },
+        {
+          "name": "Boxes",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/26f6def28be3.png"
+        },
+        {
+          "name": "Aviatrix Second Chance",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d1798f867efc.webp"
+        },
+        {
+          "name": "Fortune Pusher",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/e8f24694f35c.png"
+        },
+        {
+          "name": "Balloon Odyssey Crash",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/ffeeb7f5ca88.png"
+        },
+        {
+          "name": "Keno Rush",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1e0c314dffd6.png"
+        },
+        {
+          "name": "Land of Ra",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/089f794d3370.jpg"
+        },
+        {
+          "name": "Heads Will Roll",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/16e7623af932.png"
+        },
+        {
+          "name": "AviaFly",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d7f307ec7130.png"
+        },
+        {
+          "name": "Avia Rush",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/3481cca470b5.png"
+        },
+        {
+          "name": "Bombing Fishing",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/02774c09e080.jpg"
+        },
+        {
+          "name": "Cash Show",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/9579f2a201e8.png"
+        },
+        {
+          "name": "Dice Clash",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/a1a069c0ade7.png"
+        }
+      ],
+      "title": "Crash & Instant"
+    },
+    {
+      "items": [
+        {
+          "name": "American Football Auto Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/71935556e70f.png"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d6ec95abdd4b.jpg"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/fa6fe1521948.png"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/2852e97ec7b3.jpg"
+        },
+        {
+          "name": "AutoRoulette 2",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/91c7718fded4.jpg"
+        },
+        {
+          "name": "American Roulette 3D",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/41a7292029f0.png"
+        },
+        {
+          "name": "Baccarat",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/2fd44406d900.jpg"
+        },
+        {
+          "name": "Classic Multihand Blackjack",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/79b734c81780.png"
+        },
+        {
+          "name": "American Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/f511cd83e662.jpg"
+        },
+        {
+          "name": "Joker Poker",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/a1abce7a4d75.jpg"
+        },
+        {
+          "name": "Baccarat",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/f66d0448f814.png"
+        },
+        {
+          "name": "Baccarat Deluxe",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/aea5b77d05e6.png"
+        },
+        {
+          "name": "Mini Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/e39e2fc594d8.png"
+        },
+        {
+          "name": "Andar Bahar",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/79802d6c1cca.png"
+        },
+        {
+          "name": "Auto Roulette",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/d30b249ff516.jpg"
+        },
+        {
+          "name": "Baccarat No Commission",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/7ba5b22548a8.png"
+        },
+        {
+          "name": "Baccarat",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/501bd1709858.jpg"
+        },
+        {
+          "name": "AutoRoulette Lounge",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/14a3e07ccb00.jpg"
+        },
+        {
+          "name": "Baccarat 777",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/fb4c13779237.png"
+        },
+        {
+          "name": "Bet on Poker",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/60d28ffdbe46.jpg"
+        }
+      ],
+      "title": "Table & Cards"
+    },
+    {
+      "items": [
+        {
+          "name": "Balloons",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/fdd24b6ce1f1.png"
+        },
+        {
+          "name": "Bingo Adventure",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/10c4ff081b17.jpg"
+        },
+        {
+          "name": "Bingo Star",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/5c4b946f7d05.png"
+        },
+        {
+          "name": "Adrenaline Rush: Scratch",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/dbe13e3f6e26.png"
+        },
+        {
+          "name": "Coin Blox Scratchcard",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/5aed1f399381.png"
+        },
+        {
+          "name": "Dice Duel",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/a522c8ae8899.jpg"
+        },
+        {
+          "name": "EZ Bingo 90 Brasileira",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/aa16075109c0.png"
+        },
+        {
+          "name": "Jogo Do Bicho Simple",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/6737c3634d8c.png"
+        },
+        {
+          "name": "Sweet Keno",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/df4b795390a5.jpg"
+        },
+        {
+          "name": "Keno Rush",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1e0c314dffd6.png"
+        },
+        {
+          "name": "Break the Ice",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/54c499ee3d57.png"
+        },
+        {
+          "name": "Bingo Carnaval",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/64827c65dc9f.jpg"
+        },
+        {
+          "name": "Hot Gear",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/887697489442.png"
+        },
+        {
+          "name": "Book Of Keno",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/2a9a6b57e82e.png"
+        },
+        {
+          "name": "Ghost Father Scratchcard",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/ae849a98c864.png"
+        },
+        {
+          "name": "Lucky 5",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/1250b4175149.jpg"
+        },
+        {
+          "name": "EZ Speed Bingo 90",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/6e1b2a97a5c6.png"
+        },
+        {
+          "name": "Jogo Do Bicho",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/396107d4a8c1.png"
+        },
+        {
+          "name": "Cash Pool",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/7d7b75a803c7.png"
+        },
+        {
+          "name": "Bingo Empire",
+          "src": "https://d3nybwyntoyv6z.cloudfront.net/img/game/v/afbd4c1548d3.jpg"
+        }
+      ],
+      "title": "Lotto & Scratch"
+    }
+  ],
+  "rowIcons": [
+    "/_next/static/media/favourite.6e968e7f.svg",
+    "/_next/static/media/slots.00faba34.svg",
+    "/_next/static/media/liveCasino.c22186c9.svg",
+    "/_next/static/media/crash.243a423b.svg",
+    "/_next/static/media/blackjack.6ba96612.svg",
+    "/_next/static/media/lottery.db50aa65.svg"
+  ]
+}

@@ -1,0 +1,282 @@
+@font-face {
+  font-family: Wins Sans;
+  src: url("/assets/OpenSans-Variable.latin.578645bb.woff2");
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+.section {
+  margin: 20px 0 32px;
+  min-width: 0;
+  scroll-margin-top: 85px;
+  font-family:
+    Wins Sans,
+    "Open Sans",
+    sans-serif;
+}
+
+.panel {
+  overflow: clip;
+  border: 1px solid #29a9eb24;
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 100% at 50% 0, #29a9eb29, transparent 60%), #131a30;
+}
+
+.toolbar {
+  display: flex;
+  align-items: flex-end;
+  height: 56px;
+  padding: 12px 12px 4px;
+}
+.tabs {
+  display: flex;
+  width: 100%;
+}
+.tabs button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 40px;
+  padding: 8px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff8c;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.tabs button[aria-selected="true"] {
+  background: linear-gradient(#4abfff, #1173d4);
+  color: #fff;
+  font-weight: 600;
+  border-bottom-color: #354d97;
+}
+.tabs button:hover {
+  color: #ffffffcc;
+  filter: none;
+}
+.tabs button[aria-selected="true"]:hover {
+  color: #fff;
+}
+.tabs button:focus-visible,
+.panel [role="tabpanel"]:focus-visible,
+.game:focus-visible {
+  outline: 2px solid #91d7ff;
+  outline-offset: -2px;
+}
+.sample {
+  display: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: inherit;
+}
+.table thead {
+  background: #ffffff0a;
+}
+.table th,
+.table td {
+  display: table-cell;
+  padding: 1px 6px;
+  border: 0;
+  color: #baddfa;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: left;
+  vertical-align: middle;
+}
+.table th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #ffffff73;
+  font-weight: 600;
+}
+.table th:first-child {
+  width: 30%;
+}
+.table th:nth-child(2) {
+  width: 26%;
+}
+.table th:nth-child(5) {
+  width: 21%;
+}
+.table th:last-child {
+  width: 23%;
+}
+.table th:first-child,
+.table td:first-child {
+  padding-left: 16px;
+}
+.table th:last-child,
+.table td:last-child {
+  padding-right: 16px;
+}
+.table th:nth-child(n + 4),
+.table td:nth-child(n + 4) {
+  text-align: right;
+}
+.table th.desktopColumn,
+.table td.desktopColumn {
+  display: none;
+}
+.table tbody tr {
+  height: 40px;
+  transition: background-color 0.2s;
+}
+.table tbody tr:nth-child(odd) {
+  background: transparent;
+}
+.table tbody tr:nth-child(even) {
+  background: #ffffff08;
+}
+.table tbody tr:hover,
+.table tbody tr:focus-within {
+  background: #ffffff0d;
+}
+.table .payout {
+  color: #4ade80;
+  font-weight: 400;
+}
+
+.game,
+.player {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+.game span,
+.player span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.table .game img {
+  flex-shrink: 0;
+  width: 24px;
+  height: 27px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.player picture {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+}
+.table .player img {
+  width: 24px;
+  height: 26px;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .section {
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: 359px) {
+  .table th,
+  .table td {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+  }
+  .table th:first-child,
+  .table td:first-child {
+    padding-left: 8px;
+  }
+  .table th:last-child,
+  .table td:last-child {
+    padding-right: 8px;
+  }
+  .table .game img,
+  .player picture,
+  .table .player img {
+    width: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    margin-left: -13px;
+    margin-right: -12px;
+  }
+  .panel {
+    max-width: 1424px;
+    margin: 0 auto;
+  }
+  .toolbar {
+    height: 50px;
+    padding-right: 20px;
+  }
+  .tabs {
+    width: auto;
+  }
+  .tabs button {
+    flex: none;
+    width: 170px;
+    height: 37px;
+  }
+  .sample {
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    color: #7e93ad;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+  }
+  .table th,
+  .table td {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .table th:nth-child(n) {
+    width: auto;
+  }
+  .table th:first-child,
+  .table td:first-child {
+    padding-left: 20px;
+  }
+  .table th:last-child,
+  .table td:last-child {
+    padding-right: 20px;
+  }
+  .table th.desktopColumn,
+  .table td.desktopColumn {
+    display: table-cell;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3) {
+    text-align: center;
+  }
+  .table .game img,
+  .table .player img {
+    opacity: 0.85;
+  }
+  .table .player img {
+    height: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .table tbody tr,
+  .tabs button {
+    transition: none;
+  }
+}

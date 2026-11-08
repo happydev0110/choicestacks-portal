@@ -1,0 +1,1346 @@
+@font-face {
+  font-family: Sportsbook UI;
+  src: url("/assets/OpenSans-Variable.latin.578645bb.woff2");
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+.page {
+  --book-bg: #131c3a;
+  --book-panel: #11102a;
+  --book-control: #1d2a58;
+  --book-blue: #21a8f7;
+  margin: -21px -12px 0 -13px;
+  min-height: 900px;
+  background: var(--book-bg);
+  color: #f5f6fa;
+  font-family:
+    Sportsbook UI,
+    "Open Sans",
+    sans-serif;
+  font-size: 14px;
+}
+.page button {
+  font-family: inherit;
+}
+.page button:hover {
+  filter: none;
+}
+.page button:focus-visible,
+.page input:focus-visible,
+.page select:focus-visible {
+  outline: 2px solid #75d4ff;
+  outline-offset: -2px;
+}
+.page button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.page select {
+  color: #fff;
+  background: #202d59;
+  border: 1px solid #ffffff18;
+  border-radius: 5px;
+  font: inherit;
+  padding: 7px 9px;
+}
+.page option {
+  color: #fff;
+  background: #182344;
+}
+
+.toolbar {
+  position: relative;
+  z-index: 29;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 64px;
+  padding: 8px;
+  background: var(--book-panel);
+  color: #c4ccebb3;
+}
+.toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  flex-shrink: 0;
+  color: inherit;
+  border-radius: 5px;
+}
+.toolbar button:hover,
+.toolbar button[aria-pressed="true"] {
+  color: #fff;
+  background: transparent;
+}
+.shortcuts {
+  display: flex;
+  gap: 0;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid #757a9b;
+}
+.shortcuts button {
+  position: relative;
+}
+.liveIcon {
+  padding: 0 2px;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: 800;
+}
+.navCount {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--book-blue);
+  color: #fff;
+  font-size: 9px;
+}
+.sportTools {
+  position: relative;
+  display: flex;
+  flex: 0 1 auto;
+  min-width: 0;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sportTools::-webkit-scrollbar,
+.sportPills::-webkit-scrollbar {
+  display: none;
+}
+.moreWrap {
+  position: static;
+  flex-shrink: 0;
+}
+.moreWrap > button {
+  width: 24px;
+  padding: 0 8px 0 0;
+}
+.moreMenu {
+  position: absolute;
+  z-index: 29;
+  right: 8px;
+  left: 8px;
+  top: calc(100% + 8px);
+  background: var(--book-bg);
+  border: 1px solid #ffffff05;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px #0004;
+  padding: 24px 16px 28px;
+}
+.searchToggle {
+  margin-left: auto;
+}
+.content {
+  padding: 20px 16px 32px;
+  scroll-margin-top: 72px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  background: #11102a;
+  border: 1px solid #374670;
+  border-radius: 6px;
+}
+.search input {
+  width: 100%;
+  height: 25px;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  font-size: 13px;
+}
+.search input::placeholder {
+  color: #8b91b2;
+}
+.search button {
+  display: flex;
+  padding: 4px;
+}
+.modeTabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  margin-bottom: 16px;
+}
+.modeTabs > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  padding: 0 12px 0 10px;
+  border-radius: 22px;
+  background: var(--book-control);
+  color: #ffffff8f;
+  font-size: 14px;
+  font-weight: 600;
+}
+.modeTabs > button[aria-pressed="true"] {
+  color: #c4cceb;
+  background: #2c3e84;
+}
+.favoriteLabel {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: #efcb7c;
+  font-size: 11px;
+}
+.sportPills {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+  scrollbar-width: none;
+  margin-bottom: 0;
+  min-height: 32px;
+}
+.sportPills button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  height: 32px;
+  padding: 0 12px 0 8px;
+  border-radius: 18px;
+  background: var(--book-control);
+  color: #ffffffcc;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.sportPills button[aria-pressed="true"] {
+  background: var(--book-blue);
+  color: #fff;
+}
+.sportPills button:hover {
+  background: #344273;
+}
+.sportPills button[aria-pressed="true"]:hover {
+  background: #20a8ed;
+}
+.upcomingFilters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  min-height: 32px;
+}
+.upcomingFilters label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 18px;
+  background: var(--book-blue);
+  font-size: 13px;
+  font-weight: 600;
+}
+.upcomingFilters select {
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  max-width: 190px;
+}
+.upcomingFilters label > span:not(:global(.sr-only)) {
+  background: #ffffff2b;
+  padding: 0 4px;
+  border-radius: 5px;
+}
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.event {
+  min-width: 0;
+  padding: 12px 8px 8px;
+  border: 1px solid #f0f2fa1a;
+  border-radius: 8px;
+  background: var(--book-panel);
+}
+.league {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 16px;
+  padding-left: 8px;
+  color: #8e91a9;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.league > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.league svg {
+  flex-shrink: 0;
+}
+.league button {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 2px;
+  color: #626987;
+}
+.league button:hover,
+.league button[aria-pressed="true"] {
+  color: #f0ca6f;
+}
+.match {
+  display: block;
+  width: 100%;
+  padding: 8px 0 12px 8px;
+  text-align: left;
+  border-radius: 6px;
+}
+.match:hover {
+  background: #ffffff03;
+}
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 16px;
+  margin-bottom: 12px;
+  color: #9497b0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.status svg {
+  color: #999cb6;
+}
+.liveStatus {
+  color: #21f7f0;
+}
+.team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+  min-width: 0;
+}
+.team + .team {
+  margin-top: 8px;
+}
+.team strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.crest {
+  position: relative;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: #c85464;
+}
+.crest svg {
+  fill: #6a283c;
+}
+.crest small {
+  position: absolute;
+  top: 5px;
+  font-size: 9px;
+  line-height: 13px;
+  color: #f7dddd;
+  font-weight: 800;
+}
+.awayCrest {
+  color: #75a1c6;
+}
+.awayCrest svg {
+  fill: #27436b;
+}
+.score {
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  min-width: 32px;
+  height: 24px;
+  padding: 0 4px;
+  border: 1px solid #ffffff1a;
+  border-radius: 6px;
+  background: #ffffff05;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.marketTitle {
+  min-height: 16px;
+  margin-bottom: 8px;
+  padding-left: 8px;
+  color: #b0afc2;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.odds {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.odd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #ffffff12;
+  border-radius: 7px;
+  background: var(--book-control);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.odd > span {
+  color: #ffffff80;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.odd strong {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.odd:hover {
+  background: #2b3e70;
+}
+.odd.selectedOdd {
+  border-color: #50c6fa;
+  background: #178dcc;
+  color: #fff;
+}
+.odd.selectedOdd > span {
+  color: #e6f7ff;
+}
+.expandMarkets {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  border: 1px solid #ffffff12;
+  border-radius: 7px;
+  background: #202d59;
+  color: #a9b8de;
+}
+.expandMarkets:hover {
+  background: #2b3e70;
+}
+.extraMarkets {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #ffffff12;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  color: #a2abce;
+  font-size: 12px;
+}
+.pagination > div {
+  display: flex;
+  gap: 6px;
+}
+.pagination button {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background: #202b56;
+}
+.pagination button[aria-current="page"] {
+  background: #20a8ed;
+  color: #fff;
+}
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #ffffff12;
+  margin-top: 28px;
+  padding-top: 20px;
+  color: #9da7ca;
+  font-size: 12px;
+}
+.bottomBar label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bottomBar a {
+  color: #a8c6ee;
+  text-decoration: underline;
+}
+.disclaimer {
+  max-width: 800px;
+  margin-top: 16px;
+  color: #777f9e;
+  font-size: 11px;
+  line-height: 18px;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 300px;
+  padding: 30px 16px;
+  text-align: center;
+  background: #11102a;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+  color: #9eabc9;
+}
+.empty h2,
+.empty h3 {
+  font-size: 18px;
+  color: #e4eaff;
+}
+.empty p {
+  max-width: 380px;
+  font-size: 13px;
+}
+.empty button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #20a8ed;
+  color: #fff;
+}
+.history h2 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+.history > p {
+  color: #9aa6c6;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.history article {
+  padding: 18px;
+  margin-bottom: 16px;
+  border: 1px solid #ffffff16;
+  border-radius: 8px;
+  background: #11102a;
+}
+.history article > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.history article span {
+  color: #9aa6c6;
+}
+.history ul {
+  padding: 12px 0;
+  list-style: none;
+}
+.history li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 12px;
+}
+
+.slip {
+  position: fixed;
+  z-index: 27;
+  bottom: 0;
+  right: 18px;
+  width: 320px;
+  overflow: clip;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -5px 25px #0003;
+  background: #11102a;
+}
+.slipHeader {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background: #20a8ed;
+  color: #fff;
+}
+.slipToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 8px 12px;
+  text-align: left;
+}
+.slipToggle strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+.pickCount {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #ffffff33;
+  font-size: 11px;
+}
+.quickToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 8px 12px 8px 0;
+}
+.quickToggle > span {
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.quickToggle i {
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  width: 50px;
+  height: 23px;
+  border: 2px solid #ffffffc7;
+  border-radius: 20px;
+}
+.quickToggle i svg {
+  width: 17px;
+  height: 17px;
+  padding: 2px;
+  border-radius: 50%;
+  background: #fff;
+  color: #20a8ed;
+}
+.quickToggle[aria-checked="true"] i {
+  justify-content: flex-end;
+  background: #107eb6;
+}
+.slipBody {
+  max-height: min(620px, calc(100dvh - 140px));
+  overflow-y: auto;
+  padding: 0 16px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #364a79 #11102a;
+}
+.slipEmpty {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 112px;
+  padding: 20px 0;
+}
+.slipEmpty > span {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #23a8e8;
+  background: #14395a;
+}
+.slipEmpty strong {
+  font-size: 14px;
+}
+.slipEmpty p {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 17px;
+}
+.settingsButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 6px;
+  background: #2b2941;
+  color: #a2a3b7;
+  font-size: 12px;
+  font-weight: 600;
+}
+.settingsLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  font-size: 11px;
+}
+.settingsLabel select {
+  min-width: 0;
+  max-width: 140px;
+}
+.slipNote {
+  margin-top: 10px;
+  color: #7d86a7;
+  text-align: center;
+  font-size: 10px;
+}
+.slipTools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff12;
+  font-size: 12px;
+}
+.slipTools button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #a2aac4;
+}
+.pick {
+  position: relative;
+  padding: 14px 0;
+  border-bottom: 1px solid #ffffff12;
+}
+.pick > button {
+  position: absolute;
+  top: 10px;
+  right: -3px;
+  display: flex;
+  padding: 4px;
+  color: #a1a8c1;
+}
+.pick > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-right: 24px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.pick b {
+  color: #68cfff;
+}
+.pick small {
+  display: block;
+  margin-top: 4px;
+  color: #929bb9;
+  font-size: 11px;
+  line-height: 16px;
+}
+.slipForm {
+  padding: 14px 0;
+}
+.slipForm label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.slipForm input {
+  width: 112px;
+  padding: 9px;
+  border: 1px solid #3b4872;
+  border-radius: 5px;
+  background: #1d284a;
+  color: #fff;
+  font-size: 14px;
+}
+.presets {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+.presets button {
+  flex: 1;
+  padding: 7px;
+  border-radius: 4px;
+  background: #26345b;
+  font-size: 12px;
+}
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #a1aecb;
+}
+.summary b {
+  color: #fff;
+}
+.summary strong {
+  color: #6edbaa;
+  font-size: 16px;
+}
+.previewButton {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 5px;
+  background: #20a8ed;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.confirmation {
+  margin-top: 12px;
+  color: #79ddaf;
+  font-size: 11px;
+  line-height: 18px;
+}
+:global(body:has(#sportsbook-page) .chat-fab) {
+  bottom: 74px;
+}
+:global(body:has(#sportsbook-page)) :global(main) {
+  overflow: clip;
+}
+
+.scrollFilters {
+  position: relative;
+  min-width: 0;
+  margin-bottom: 17px;
+}
+.sportPills {
+  position: relative;
+  overscroll-behavior-x: contain;
+}
+.sportPills button > svg {
+  flex-shrink: 0;
+}
+.scrollArrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  color: #c4cceb;
+}
+.scrollNext {
+  right: 0;
+  background: linear-gradient(90deg, #131c3a00, #131c3a 65%);
+}
+.scrollPrevious {
+  left: 0;
+  background: linear-gradient(270deg, #131c3a00, #131c3a 65%);
+}
+.scrollArrow:focus-visible {
+  border-radius: 6px;
+}
+.leagueNavigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 16px;
+}
+.leagueNavigation > .scrollFilters {
+  flex: 1;
+  margin: 0;
+}
+.largeFilters .sportPills button {
+  height: 40px;
+  padding: 0 12px;
+}
+.leagueNavigation > .filterDropdown > button {
+  height: 40px;
+  background: var(--book-control);
+  color: #c4cceb;
+}
+.leagueNavigation > .filterDropdown > button > span {
+  max-width: 115px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sportModeTabs {
+  margin-bottom: 24px;
+}
+.sportModeTabs > button {
+  background: var(--book-panel);
+}
+.sportModeTabs > button[aria-pressed="true"] {
+  background: transparent;
+  color: #fff;
+}
+.filterDropdown {
+  position: relative;
+  flex-shrink: 0;
+}
+.filterDropdown > button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 10px 0 8px;
+  background: var(--book-blue);
+  color: white;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.filterDropdown small,
+.sportsMenuGrid small {
+  font-size: 11px;
+  padding: 1px 5px;
+  background: #c4cceb1a;
+  border-radius: 6px;
+}
+.filterOptions {
+  position: absolute;
+  z-index: 20;
+  min-width: 100%;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 40px));
+  max-height: 320px;
+  overflow: auto;
+  top: calc(100% + 6px);
+  left: 0;
+  padding: 6px;
+  border: 1px solid #ffffff16;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px #0006;
+  background: #1d284e;
+}
+.filterOptions button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 34px;
+  padding: 6px 10px;
+  text-align: left;
+  border-radius: 5px;
+  color: #c4cceb;
+  font-size: 13px;
+}
+.filterOptions button:hover,
+.filterOptions button[aria-selected="true"] {
+  background: #2c3e84;
+  color: white;
+}
+.menuBackdrop {
+  position: fixed;
+  z-index: 28;
+  inset: 128px 0 0 73px;
+  background: #0009;
+  cursor: default;
+}
+.moreWrap > button[aria-expanded="true"] > svg {
+  transform: rotate(180deg);
+}
+.menuTabs {
+  display: flex;
+  background: var(--book-panel);
+  padding: 4px;
+  border-radius: 10px;
+  width: min(590px, calc(100% - 64px));
+  margin: 0 auto 16px;
+}
+.toolbar .menuTabs button {
+  height: 32px;
+  width: 50%;
+  border-radius: 7px;
+  padding: 4px 16px;
+  font-size: 12px;
+}
+.toolbar .menuTabs button[aria-pressed="true"] {
+  background: var(--book-blue);
+  color: #fff;
+}
+.toolbar .closeSportsMenu {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.sportsMenuGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-height: min(420px, calc(100dvh - 270px));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3b456b transparent;
+}
+.toolbar .sportsMenuGrid button {
+  width: 100%;
+  height: 56px;
+  gap: 6px;
+  justify-content: flex-start;
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sportsMenuGrid button > svg {
+  flex-shrink: 0;
+}
+.sportsMenuGrid button > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.toolbar .sportsMenuGrid button:hover {
+  background: #ffffff05;
+}
+.flag {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+.england {
+  background:
+    linear-gradient(transparent 40%, #d52240 40% 60%, transparent 60%),
+    linear-gradient(90deg, white 40%, #d52240 40% 60%, white 60%);
+}
+.italy {
+  background: linear-gradient(90deg, #149956 33%, white 33% 66%, #e33a4e 66%);
+}
+.germany {
+  background: linear-gradient(#171923 33%, #e43947 33% 66%, #ffd04c 66%);
+}
+.brazil {
+  background: #15985b;
+}
+.brazil::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  background: #ffe154;
+}
+.brazil::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3169be;
+}
+.spain {
+  background: linear-gradient(#ec384c 25%, #ffd44a 25% 75%, #ec384c 75%);
+}
+.usa {
+  background: repeating-linear-gradient(#e43b53 0 2px, white 2px 4px);
+}
+.usa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 11px;
+  background: #315a9c;
+}
+.argentina {
+  background: linear-gradient(#78c6ef 33%, white 33% 66%, #78c6ef 66%);
+}
+.argentina::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #e8b249;
+}
+
+@media (min-width: 1700px) {
+  .page {
+    margin-left: -29px;
+    margin-right: -28px;
+  }
+}
+@media (max-width: 1023px) {
+  .toolbar {
+    gap: 4px;
+    padding: 0 10px;
+  }
+  .shortcuts {
+    gap: 2px;
+    padding-right: 6px;
+  }
+  .toolbar button {
+    width: 34px;
+  }
+  .moreWrap > button {
+    width: 22px;
+  }
+  .sportTools {
+    gap: 4px;
+  }
+  .content {
+    padding: 16px 12px 28px;
+  }
+  .eventGrid {
+    gap: 12px;
+  }
+  .team strong {
+    font-size: 13px;
+  }
+}
+@media (max-width: 767px) {
+  .eventGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .team strong {
+    font-size: 14px;
+  }
+}
+@media (max-width: 700px) {
+  .page {
+    margin: -19px -16px 0;
+    min-height: 800px;
+  }
+  .toolbar {
+    height: 54px;
+  }
+  .toolbar button {
+    height: 38px;
+    width: 32px;
+  }
+  .shortcuts {
+    gap: 0;
+  }
+  .sportTools {
+    gap: 2px;
+  }
+  .moreWrap > button {
+    width: 22px;
+  }
+  .content {
+    padding: 14px 10px 28px;
+    scroll-margin-top: 64px;
+  }
+  .modeTabs {
+    margin-bottom: 12px;
+  }
+  .modeTabs > button {
+    height: 36px;
+    font-size: 13px;
+  }
+  .sportPills,
+  .upcomingFilters {
+    margin-bottom: 14px;
+  }
+  .sportPills button {
+    font-size: 12px;
+  }
+  .league {
+    font-size: 11px;
+  }
+  .slip {
+    bottom: 84px;
+    right: 8px;
+    width: min(320px, calc(100% - 20px));
+    border-radius: 6px;
+  }
+  .slipBody {
+    max-height: calc(100dvh - 230px);
+  }
+  .slipHeader {
+    height: 48px;
+  }
+  .slipToggle {
+    padding-left: 10px;
+    gap: 6px;
+  }
+  .slipToggle strong {
+    font-size: 15px;
+  }
+  :global(body:has(#sportsbook-page) .chat-fab) {
+    display: none;
+  }
+  .upcomingFilters select {
+    max-width: 152px;
+  }
+}
+@media (max-width: 359px) {
+  .odds {
+    gap: 6px;
+  }
+  .expandMarkets {
+    flex-basis: 28px;
+  }
+  .odd {
+    padding: 6px;
+    gap: 4px;
+    font-size: 11px;
+  }
+  .toolbar {
+    padding: 0 6px;
+  }
+  .toolbar button {
+    width: 30px;
+  }
+  .content {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .league {
+    font-size: 10px;
+  }
+  .upcomingFilters select {
+    max-width: 126px;
+    font-size: 12px;
+  }
+  .bottomBar {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .bottomBar label {
+    gap: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page button {
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .toolbar .sportsMenuGrid button {
+    height: 50px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .sportsMenuGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .toolbar {
+    gap: 0;
+    padding: 0 6px;
+  }
+  .toolbar > .shortcuts {
+    padding-right: 4px;
+    margin-right: 4px;
+  }
+  .toolbar button > svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  .toolbar .moreWrap button > svg {
+    width: 16px;
+    height: 16px;
+  }
+  .sportTools {
+    gap: 0;
+  }
+  .sportPills {
+    margin-bottom: 0;
+  }
+  .scrollFilters {
+    margin-bottom: 14px;
+  }
+  .leagueNavigation {
+    margin-top: 0;
+    gap: 6px;
+  }
+  .largeFilters .sportPills button,
+  .leagueNavigation > .filterDropdown > button {
+    height: 36px;
+    font-size: 12px;
+  }
+  .leagueNavigation > .filterDropdown > button > span {
+    max-width: 75px;
+  }
+  .filterDropdown > button {
+    font-size: 12px;
+  }
+  .upcomingFilters .filterDropdown:first-child {
+    max-width: calc(100% - 100px);
+  }
+  .upcomingFilters .filterDropdown > button {
+    max-width: 100%;
+  }
+  .upcomingFilters .filterDropdown > button > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sportModeTabs {
+    margin-bottom: 18px;
+  }
+  .menuBackdrop {
+    inset: 111px 0 0;
+  }
+  .moreMenu {
+    left: 4px;
+    right: 4px;
+    padding: 16px 8px;
+  }
+  .sportsMenuGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: calc(100dvh - 290px);
+  }
+  .toolbar .sportsMenuGrid button {
+    padding: 4px;
+    gap: 3px;
+    font-size: 11px;
+  }
+  .sportsMenuGrid small {
+    font-size: 9px;
+    padding: 1px 3px;
+  }
+  .toolbar .closeSportsMenu {
+    top: 18px;
+    right: 8px;
+  }
+  .toolbar .closeSportsMenu svg {
+    width: 18px;
+    height: 18px;
+  }
+  .toolbar .menuTabs button {
+    height: 30px;
+    width: 50%;
+  }
+}

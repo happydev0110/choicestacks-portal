@@ -1,0 +1,27 @@
+.hero-carousel { position: relative; margin: 0 -12px; }
+.promo-playback { position: absolute; z-index: 2; right: 8px; bottom: 5px; width: 28px; height: 26px; display: grid; place-items: center; border: 1px solid #31445f; border-radius: 7px; background: #14233b; color: #a9c0d9; }
+.promo-swiper.swiper { padding-bottom: 49px; }
+.promo-swiper .swiper-slide { width: 374.67px; }
+/* Reserve the same gap before Swiper hydrates; initialized slides use its inline margin. */
+.promo-swiper:not(.swiper-initialized) .swiper-slide { margin-right: 16px; }
+.promo-card { position: relative; display: block; width: 100%; height: 210.63px; padding: 0; overflow: hidden; border-radius: 10px; text-align: left; box-shadow: 0 12px 22px -8px #0008; user-select: none; }
+.promo-card > img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.promo-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #102a49a6, transparent 65%), radial-gradient(ellipse at center, transparent 30%, #1835554d); pointer-events: none; }
+.promo-copy { position: absolute; top: 38%; left: 20px; width: 56%; display: flex; flex-direction: column; gap: 6px; }
+.promo-copy strong { font-size: 20px; line-height: 1.25; }
+.promo-copy > span { color: #dce4ef; font-size: 12px; line-height: 1.45; }
+.promo-swiper .swiper-pagination { bottom: 7px; height: 22px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.promo-swiper .swiper-pagination-bullet { width: 11px; height: 5px; margin: 0 !important; border-radius: 5px; background: #536087; opacity: 1; transition: width .25s, background .25s; }
+.promo-swiper .swiper-pagination-bullet::before { content: ''; position: absolute; width: 24px; height: 24px; transform: translate(-50%, -40%); }
+.promo-swiper .swiper-pagination-bullet-active { width: 44px; background: #52c3f7; }
+.promo-swiper .swiper-pagination-bullet:focus-visible { outline: 2px solid #8bdeff; outline-offset: 5px; }
+@media (min-width: 640px) and (max-width: 1023px) { .promo-card { height: 178px; } }
+@media (max-width: 639px) {
+  .hero-carousel { margin: 0; }
+  .promo-swiper .swiper-slide { width: 100%; }
+  .promo-card { height: auto; aspect-ratio: 587 / 285; }
+  .promo-copy { top: 34%; left: 20px; }
+  .promo-copy strong { font-size: 20px; }
+  .promo-copy > span { font-size: 11px; }
+  .promo-swiper.swiper { padding-bottom: 49px; }
+}

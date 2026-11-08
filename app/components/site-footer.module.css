@@ -1,0 +1,361 @@
+.root {
+  width: 100%;
+  max-width: 1156px;
+  margin: 32px auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: 32px 32px 0 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      163% 258% at 50% 41.8%,
+      rgba(17, 15, 43, 0) 0%,
+      rgba(23, 54, 91, 0.19) 12.96%,
+      rgba(29, 92, 139, 0.38) 25.92%,
+      rgba(35, 131, 187, 0.56) 38.88%,
+      rgba(41, 169, 235, 0.75) 51.84%
+    ),
+    #100c26;
+}
+.divider {
+  height: 2.45px;
+  width: 100%;
+  background: #47b6f0;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+.top {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 24px 60px 40px;
+}
+.navigation {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.casinoColumn,
+.sportsColumn,
+.policyColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 0;
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.group h3,
+.supportCard h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #f0f7ff;
+}
+.group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.group li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+.group a,
+.group button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #baddfa99;
+  text-align: left;
+  text-decoration: none;
+  border: 0;
+  background: none;
+  transition: color 0.2s;
+}
+.group a:hover,
+.group button:hover {
+  color: #f0f7ff;
+}
+.group a:focus-visible,
+.group button:focus-visible {
+  outline: 2px solid #62c8ff;
+  border-radius: 2px;
+  outline-offset: 3px;
+}
+.mobileGroup {
+  display: none;
+}
+.supportCard {
+  display: flex;
+  width: 232px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #29a9eb;
+  border-radius: 14px;
+  padding: 20px;
+  background: radial-gradient(
+    286% 280% at 50% 41.8%,
+    rgba(17, 15, 43, 0) 0%,
+    rgba(23, 54, 91, 0.25) 12.96%,
+    rgba(29, 92, 139, 0.5) 25.92%,
+    rgba(35, 131, 187, 0.75) 38.88%,
+    #29a9eb 51.84%
+  );
+}
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.supportCard p {
+  max-width: 152px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #ffffff80;
+  text-align: center;
+}
+.chatButton {
+  margin-top: 6px;
+  padding: 8px 20px;
+  border: 1px solid #2383bb;
+  border-radius: 10px;
+  background: #20274040;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #ffffffbf;
+}
+.chatButton:hover {
+  border-color: #29a9eb;
+  color: #fff;
+  background: #224767;
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 24px 40px;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 16px;
+}
+.badges img {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.ageNotice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  text-align: center;
+}
+.ageNotice > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: 2px solid #ef4444;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ef4444;
+}
+.ageNotice p,
+.disclaimer,
+.copyright {
+  margin: 0;
+  padding: 0;
+  color: #a5b6cc;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 400;
+}
+.disclaimer,
+.copyright {
+  width: 100%;
+}
+.chatDialog {
+  text-align: center;
+}
+.chatPreview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 36px 28px;
+}
+.chatPreview h2 {
+  font-size: 24px;
+}
+.chatPreview p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #b3c8df;
+}
+.closeChat {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #233753;
+}
+.faqLink {
+  color: #77d1ff;
+  font-size: 13px;
+}
+@media (min-width: 1200px) {
+  .top {
+    gap: 56px;
+    padding-left: 56px;
+    padding-right: 28px;
+  }
+}
+@media (max-width: 1023px) {
+  .root {
+    width: calc(100% + 44px);
+    max-width: none;
+    margin: 32px -20px 0 -24px;
+  }
+  :global(main):has(> .root) {
+    padding-bottom: 0;
+  }
+  .top {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 20px;
+  }
+  .navigation {
+    width: 100%;
+    flex: auto;
+    gap: 24px;
+  }
+  .supportCard {
+    width: 100%;
+    max-width: 288px;
+    margin: 0 auto;
+  }
+  .supportCard p {
+    max-width: 184px;
+  }
+  .divider {
+    opacity: 1;
+    mix-blend-mode: normal;
+    background: linear-gradient(
+      90deg,
+      #47b6f000,
+      #47b6f038 12%,
+      #47b6f0 50%,
+      #47b6f038 88%,
+      #47b6f000
+    );
+  }
+  .bottom {
+    padding: 24px 20px calc(180px + env(safe-area-inset-bottom));
+  }
+  .badges {
+    gap: 16px 24px;
+  }
+  .badges img {
+    height: 48px;
+  }
+  .ageNotice,
+  .disclaimer {
+    width: 90%;
+  }
+}
+@media (max-width: 700px) {
+  .root {
+    width: calc(100% + 36px);
+    margin-left: -20px;
+    margin-right: -16px;
+  }
+}
+@media (max-width: 639px) {
+  .navigation {
+    gap: 16px;
+  }
+  .mobileGroup {
+    display: flex;
+  }
+  .desktopGroup {
+    display: none;
+  }
+  .casinoColumn {
+    flex: 1.15;
+  }
+  .sportsColumn {
+    flex: 0.82;
+  }
+  .policyColumn {
+    flex: 1;
+  }
+  .group h3 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 359px) {
+  .top {
+    padding: 30px 14px;
+  }
+  .navigation {
+    gap: 12px;
+  }
+  .group h3 {
+    font-size: 13px;
+  }
+  .group a,
+  .group button {
+    font-size: 12px;
+  }
+  .bottom {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .ageNotice p,
+  .disclaimer,
+  .copyright {
+    font-size: 12px;
+  }
+}

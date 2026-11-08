@@ -1,0 +1,53 @@
+.navigation-rail { position: fixed; z-index: 35; top: 65px; bottom: 0; left: 0; width: 73px; border-left: 4px solid #bca01b; border-right: 1px solid #273c56; background: linear-gradient(155deg, #1b3552, #101a30 55%); }
+.rail-icons { display: flex; flex-direction: column; gap: 8px; height: 100%; overflow-y: auto; scrollbar-width: none; padding: 20px 10px; }
+.rail-icons button { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #283a57; border-radius: 11px; background: linear-gradient(135deg, #223957, #101b36); }
+.rail-icons img { width: 27px; height: 27px; object-fit: contain; padding: 2px; border-radius: 8px; background: #5a779325; }
+.rail-icons button.active { border-color: #3ca8df; box-shadow: 0 0 12px #29a9eb59; }
+.navigation-flyout { position: absolute; top: 1px; bottom: 2px; left: -2px; width: 220px; padding: 21px 16px 16px; overflow: auto; scrollbar-width: none; border: 1px solid #394e6570; border-radius: 16px; background: linear-gradient(155deg, #1b3552, #111a2f 55%); box-shadow: 0 28px 70px -24px #000c; opacity: 0; transform: translateX(-12px); pointer-events: none; transition: opacity .2s ease-out, transform .2s ease-out; }
+.navigation-flyout.is-open { opacity: 1; transform: translateX(0); pointer-events: auto; }
+.navigation-content { display: flex; flex-direction: column; gap: 12px; }
+.navigation-tabs { display: flex; border-radius: 9px; overflow: hidden; height: 44px; flex-shrink: 0; background: #1a2846; }
+.navigation-tabs button { display: flex; align-items: center; justify-content: center; gap: 4px; width: 50%; font-size: 14px; padding: 4px; font-weight: 600; }
+.navigation-tabs img { width: 25px; height: 25px; object-fit: contain; }
+.navigation-tabs .selected { background: #0072bd; }
+.cashback-card { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; gap: 5px; border: 1px solid #486780; border-radius: 10px; min-height: 120px; padding: 12px; background: #111e32; }
+.cashback-card::before { content: ''; position: absolute; z-index: -2; inset: 0 0 0 42%; background: url('/assets/cashback-aviator.81bcc5b3.webp') 68% 12% / cover; }
+.cashback-card::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #111e32 20%, #111e32a6 50%, #111e3210), linear-gradient(0deg, #111e3299, transparent 70%); }
+.cashback-card strong { font-size: 16px; font-style: italic; line-height: 1.1; }
+.cashback-card > span { font-size: 12px; color: #b4c4d8; }
+.cashback-card .primary { font-size: 10px; padding: 6px 12px; font-weight: 400; }
+.navigation-featured, .navigation-links { display: flex; flex-direction: column; gap: 6px; }
+.drawer-feature { display: flex; align-items: center; justify-content: space-between; gap: 6px; height: 66px; padding: 8px 12px; border: 1px solid #304a68; border-radius: 9px; text-align: left; font-size: 14px; font-weight: 650; background: linear-gradient(120deg, #25344c, #101b36 60%); }
+.drawer-feature img { width: 48px; height: 50px; object-fit: contain; }
+.drawer-item { display: flex; align-items: center; gap: 9px; min-height: 46px; width: 100%; border-radius: 10px; border: 1px solid #2a3e5c; background: linear-gradient(115deg, #233958, #101d3d 65%); padding: 6px 10px; font-size: 14px; font-weight: 600; text-align: left; }
+.drawer-item img { width: 28px; height: 28px; object-fit: contain; border-radius: 7px; background: #4a658532; padding: 2px; }
+.drawer-item.current { border-color: #3986b0; }
+.drawer-item svg { margin-left: auto; }
+.buy-crypto { justify-content: center; }
+.mobile-menu-dialog { display: none; }
+@media (max-width: 1023px) {
+  .navigation-rail { display: none; }
+  main { margin-left: 0; border-left: 4px solid #ae911d; padding-bottom: 90px; }
+  .mobile-menu-dialog[open] { display: block; }
+  .mobile-menu-dialog { position: fixed; inset: 8px auto 8px 0; margin: 0; padding: 0; width: min(320px, 78vw); max-width: none; max-height: none; height: calc(100dvh - 16px); border: 1px solid #30455f; border-radius: 0 16px 16px 0; background: linear-gradient(155deg, #1c3652, #101b31 65%); overflow-y: auto; scrollbar-width: none; }
+  .mobile-menu-dialog::backdrop { background: #020a16b8; backdrop-filter: blur(5px); }
+  .mobile-menu-surface { padding: 15px 15px 12px; animation: menu-slide-in .2s ease-out; }
+  .mobile-menu-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 13px; }
+  .mobile-menu-heading > img { width: 125px; }
+  .mobile-menu-heading > button { display: grid; place-items: center; background: #1a2a48; border-radius: 8px; width: 36px; height: 36px; }
+  .mobile-menu-heading svg { width: 25px; height: 25px; }
+  .mobile-menu-surface .navigation-content { gap: 12px; }
+  .mobile-menu-surface .drawer-item { font-size: 16px; }
+  .mobile-menu-surface .navigation-tabs button { font-size: 16px; }
+  .mobile-menu-surface .language-item { font-weight: 400; }
+  .mobile-menu-surface .language-item svg { background: #005e8f; border-radius: 5px; width: 25px; height: 30px; padding: 3px; }
+  .mobile-menu-surface .drawer-feature { font-size: 14px; }
+  .mobile-menu-surface .cashback-card { height: 120px; }
+}
+@media (min-width: 701px) and (max-width: 1023px) {
+  .mobile-nav { position: fixed; display: flex; z-index: 35; bottom: 12px; left: 50%; transform: translateX(-50%); width: 390px; justify-content: space-around; align-items: center; border: 1px solid #29435b; border-radius: 36px; background: #131c34f5; box-shadow: 0 5px 20px #0008; height: 67px; padding: 5px; }
+  .mobile-nav button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 10px; color: #b1bed4; min-width: 18%; height: 55px; border-radius: 30px; }
+  .mobile-nav svg, .mobile-nav img { width: 22px; height: 22px; }
+  .mobile-nav .selected { background: #163958; color: #5ac5ff; border: 1px solid #306385; }
+}
+@keyframes menu-slide-in { from { transform: translateX(-35px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
