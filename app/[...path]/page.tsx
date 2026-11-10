@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { pageDefinitions } from "../site-map";
 import { FrontendPage } from "../screens/frontend-page";
@@ -8,12 +7,6 @@ export function generateStaticParams() {
   return Object.keys(pageDefinitions).filter((path) => pageDefinitions[path]?.kind !== 'account' && path !== 'casino').map((path) => ({
     path: path.split("/"),
   }));
-}
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { path } = await params;
-  return {
-    title: `${pageDefinitions[path.join("/")]?.title ?? "Page not found"} | Win777`,
-  };
 }
 export default async function Page({ params }: Props) {
   const { path } = await params;

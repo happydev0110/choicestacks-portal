@@ -5,7 +5,6 @@ import { FavoriteButton, ProviderArtwork } from "../../screens/provider-cards";
 import "../../screens/provider-games.css";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Game details | Choicestakes" };
 export default async function Page({
   params,
 }: {

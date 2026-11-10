@@ -117,7 +117,7 @@ export function ProviderArtwork({ game }: { game: ProviderGame }) {
 export function ProviderGameCard({ game }: { game: ProviderGame }) {
   return (
     <article className="provider-game-card">
-      <Link className="catalog-card" href={`/games/${game.uuid}`}>
+      <Link className="catalog-card" href={`/play/${game.uuid}`} prefetch={false}>
         <div className="catalog-art provider-art">
           <ProviderArtwork game={game} />
           <span className="catalog-play">

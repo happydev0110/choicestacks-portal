@@ -2,7 +2,6 @@ import type { ProviderLobbyData } from "../lib/gaming";
 import { CasinoLobby } from "../screens/casino-lobby";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Online Casino | Choicestakes" };
 
 export default async function Page() {
   let data: ProviderLobbyData | null = null;

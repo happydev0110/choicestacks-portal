@@ -4,7 +4,6 @@ import { currentPlayer } from "../../lib/auth-server";
 import type { ProviderGame } from "../../lib/gaming";
 import { ProviderGamePlayer } from "../../screens/provider-games";
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Play | Choicestakes" };
 export default async function Page({
   params,
 }: {
@@ -57,6 +56,7 @@ export default async function Page({
   };
   return (
     <ProviderGamePlayer
+      key={`${player.id}:${data.game.uuid}`}
       game={data.game}
       playerId={player.id}
       launchEnabled={data.launchEnabled === true}

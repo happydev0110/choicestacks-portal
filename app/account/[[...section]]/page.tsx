@@ -6,7 +6,6 @@ import { AccountScreen } from '../../screens/account-screen';
 import type { Player } from '../../lib/player';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'My Account | Choicestakes' };
 
 export default async function AccountPage({ params }: { params: Promise<{ section?: string[] }> }) {
   const { section = [] } = await params;

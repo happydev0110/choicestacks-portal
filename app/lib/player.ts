@@ -1,5 +1,10 @@
 export type Player = { id: string; email: string; displayName: string; emailVerified: boolean };
 
+export function playerDestination(requested: string | null) {
+  return requested && /^(?:\/account(?:\/[a-z-]+)?|\/play\/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|\/provider-games)$/.test(requested)
+    ? requested : '/account';
+}
+
 export async function playerRequest<T>(path: string, body?: unknown): Promise<T> {
   let response: Response;
   try {

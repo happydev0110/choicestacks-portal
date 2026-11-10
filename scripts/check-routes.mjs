@@ -103,7 +103,7 @@ if (catalog.configured && catalog.total) {
   console.log(`All ${seen.size} provider games are reachable through the portal API.`);
 }
 for (const path of linkedPaths)
-  if (!routes.includes(path) && !protectedRoutes.includes(path) && !(path.startsWith('/games/') && catalogIds.has(path.slice(7))))
+  if (!routes.includes(path) && !protectedRoutes.includes(path) && !(/^\/(?:games|play)\//.test(path) && catalogIds.has(path.split('/')[2])))
     failures.push(`Internal link has no generated route: ${path}`);
 console.log(
   `${routes.length} public pages, ${protectedRoutes.length} protected pages and ${linkedPaths.size} internal link destinations checked at ${origin}.`,

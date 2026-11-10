@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ProviderCatalog } from "../../screens/provider-catalog";
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Provider games | Choicestakes" };
 export default async function Page({
   params,
 }: {
