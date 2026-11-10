@@ -6,6 +6,11 @@ import { gamingRequest, type ProviderCatalogData } from "../lib/gaming";
 import { categoryLinks } from "../site-map";
 import { PageHeading } from "./shared";
 import { ProviderGameGrid, useProviderFavorites } from "./provider-cards";
+import {
+  CatalogAvailability,
+  collectionIsEmpty,
+  usePendingCatalogRefresh,
+} from "./catalog-availability";
 import "./provider-games.css";
 
 export function ProviderCatalog({
@@ -34,6 +39,7 @@ export function ProviderCatalog({
   const [retry, setRetry] = useState(0);
   const { ids } = useProviderFavorites();
   const selectedIds = favoritesOnly ? ids.join(",") : undefined;
+  usePendingCatalogRefresh(data, error, setRetry);
   useEffect(() => {
     function restore() {
       const query = new URLSearchParams(window.location.search);
@@ -157,7 +163,7 @@ export function ProviderCatalog({
         <ShieldCheck size={18} />
         <span>Sandbox collection · Play uses test credits only</span>
       </div>
-      {data?.configured && !data.launchEnabled && (
+      {data?.configured && !data.launchEnabled && !collectionIsEmpty(data) && (
         <p className="provider-availability">
           Browse the collection now. Sandbox play will be available once setup
           is complete.
@@ -221,9 +227,20 @@ export function ProviderCatalog({
       ) : !data?.configured ? (
         <div className="panel provider-empty">
           <Gamepad2 size={46} />
-          <h2>Games are coming soon</h2>
+          <h2>Games temporarily unavailable</h2>
           <p>The collection is not available yet. Please check back soon.</p>
+          <button
+            className="secondary"
+            onClick={() => setRetry((value) => value + 1)}
+          >
+            Refresh collection
+          </button>
         </div>
+      ) : collectionIsEmpty(data) ? (
+        <CatalogAvailability
+          data={data}
+          onRetry={() => setRetry((value) => value + 1)}
+        />
       ) : !data.games.length ? (
         <div className="panel provider-empty">
           <Search size={38} />
@@ -234,7 +251,7 @@ export function ProviderCatalog({
                 ? "Your collection starts here"
                 : category
                   ? "No games in this category yet"
-                  : "Games are coming soon"}
+                  : "No matching games"}
           </h2>
           <p>
             {filters.search || filters.provider
@@ -243,7 +260,7 @@ export function ProviderCatalog({
                 ? "Choose the heart on any game to save it on this device."
                 : category
                   ? "Explore All Games while this collection is being organized."
-                  : "The collection will appear here once it is available."}
+                  : "Try another search or provider."}
           </p>
           {(filters.search || filters.provider) && !initialProvider && (
             <button
@@ -259,6 +276,12 @@ export function ProviderCatalog({
         </div>
       ) : (
         <>
+          {data.catalog?.status === "stale" && (
+            <p className="provider-availability">
+              Showing the last available collection while updates are
+              temporarily unavailable.
+            </p>
+          )}
           <p className="result-summary" role="status">
             {data.total} {data.total === 1 ? "game" : "games"} · {data.currency}{" "}
             test credits
@@ -295,10 +318,10 @@ export function ProviderDirectory() {
   const [search, setSearch] = useState("");
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(0);
+  usePendingCatalogRefresh(data, error, setRetry);
   useEffect(() => {
     const controller = new AbortController();
     setError("");
-    setData(null);
     void gamingRequest<ProviderCatalogData>(
       "games",
       undefined,
@@ -349,11 +372,14 @@ export function ProviderDirectory() {
         </div>
       ) : !data ? (
         <p role="status">Loading providers…</p>
+      ) : collectionIsEmpty(data) ? (
+        <CatalogAvailability
+          data={data}
+          onRetry={() => setRetry((value) => value + 1)}
+        />
       ) : !providers.length ? (
         <div className="panel provider-empty">
-          <h2>
-            {search ? "No matching providers" : "Providers are coming soon"}
-          </h2>
+          <h2>No matching providers</h2>
           <Link href="/casino">Explore all games</Link>
         </div>
       ) : (

@@ -18,6 +18,19 @@ export type ProviderCatalogData = {
   currency: string;
   environment: "sandbox";
   syncedAt: string | null;
+  catalog?: {
+    status:
+      | "not_configured"
+      | "not_synced"
+      | "syncing"
+      | "ready"
+      | "empty"
+      | "failed"
+      | "stale";
+    total: number;
+    lastAttemptAt: string | null;
+    lastSuccessAt: string | null;
+  };
 };
 export type SandboxWalletData = {
   currency: string;
