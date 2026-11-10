@@ -1,275 +1,263 @@
 [
   {
-    "name": "logo.995f22c6.png",
-    "url": "https://win777live.com/_next/static/media/logo.995f22c6.png"
-  },
-  {
-    "name": "logo6.bb9b63ab.png",
-    "url": "https://win777live.com/_next/static/media/logo6.bb9b63ab.png"
-  },
-  {
     "name": "hero-banner-sports.051a738b.jpg",
-    "url": "https://win777live.com/_next/static/media/hero-banner-sports.051a738b.jpg"
+    "url": "/assets/hero-banner-sports.051a738b.jpg"
   },
   {
     "name": "Unbounded-SemiBold.latin.4c687cb8.woff2",
-    "url": "https://win777live.com/_next/static/media/Unbounded-SemiBold.latin.4c687cb8.woff2"
+    "url": "/assets/Unbounded-SemiBold.latin.4c687cb8.woff2"
   },
   {
     "name": "OpenSans-Variable.latin.578645bb.woff2",
-    "url": "https://win777live.com/_next/static/media/OpenSans-Variable.latin.578645bb.woff2"
+    "url": "/assets/OpenSans-Variable.latin.578645bb.woff2"
   },
   {
     "name": "Unbounded-Light.latin.37195157.woff2",
-    "url": "https://win777live.com/_next/static/media/Unbounded-Light.latin.37195157.woff2"
+    "url": "/assets/Unbounded-Light.latin.37195157.woff2"
   },
   {
     "name": "hero-banner-crash.2a878c8f.jpg",
-    "url": "https://win777live.com/_next/static/media/hero-banner-crash.2a878c8f.jpg"
+    "url": "/assets/hero-banner-crash.2a878c8f.jpg"
   },
   {
     "name": "hero-banner-wallet.306b8026.jpg",
-    "url": "https://win777live.com/_next/static/media/hero-banner-wallet.306b8026.jpg"
+    "url": "/assets/hero-banner-wallet.306b8026.jpg"
   },
   {
     "name": "hero-banner-aviator.1b5c4827.jpg",
-    "url": "https://win777live.com/_next/static/media/hero-banner-aviator.1b5c4827.jpg"
+    "url": "/assets/hero-banner-aviator.1b5c4827.jpg"
   },
   {
     "name": "hero-banner-newgames.1df48699.jpg",
-    "url": "https://win777live.com/_next/static/media/hero-banner-newgames.1df48699.jpg"
+    "url": "/assets/hero-banner-newgames.1df48699.jpg"
   },
   {
     "name": "card.d47791bb.svg",
-    "url": "https://win777live.com/_next/static/media/card.d47791bb.svg"
+    "url": "/assets/card.d47791bb.svg"
   },
   {
     "name": "sports2.ead8e5b7.svg",
-    "url": "https://win777live.com/_next/static/media/sports2.ead8e5b7.svg"
+    "url": "/assets/sports2.ead8e5b7.svg"
   },
   {
     "name": "ellipse.68abcf38.png",
-    "url": "https://win777live.com/_next/static/media/ellipse.68abcf38.png"
+    "url": "/assets/ellipse.68abcf38.png"
   },
   {
     "name": "sports-trophy.429af003.webp",
-    "url": "https://win777live.com/_next/static/media/sports-trophy.429af003.webp"
+    "url": "/assets/sports-trophy.429af003.webp"
   },
   {
     "name": "live-casino-element.d7c46a6f.webp",
-    "url": "https://win777live.com/_next/static/media/live-casino-element.d7c46a6f.webp"
+    "url": "/assets/live-casino-element.d7c46a6f.webp"
   },
   {
     "name": "allGame.f63a8fae.svg",
-    "url": "https://win777live.com/_next/static/media/allGame.f63a8fae.svg"
+    "url": "/assets/allGame.f63a8fae.svg"
   },
   {
     "name": "all-games-gamepad.716acae7.webp",
-    "url": "https://win777live.com/_next/static/media/all-games-gamepad.716acae7.webp"
+    "url": "/assets/all-games-gamepad.716acae7.webp"
   },
   {
     "name": "slots.00faba34.svg",
-    "url": "https://win777live.com/_next/static/media/slots.00faba34.svg"
+    "url": "/assets/slots.00faba34.svg"
   },
   {
     "name": "roulette.31ce215c.svg",
-    "url": "https://win777live.com/_next/static/media/roulette.31ce215c.svg"
+    "url": "/assets/roulette.31ce215c.svg"
   },
   {
     "name": "slots-machine.d48b1a72.webp",
-    "url": "https://win777live.com/_next/static/media/slots-machine.d48b1a72.webp"
+    "url": "/assets/slots-machine.d48b1a72.webp"
   },
   {
     "name": "roulette-wheel.4f897a5a.webp",
-    "url": "https://win777live.com/_next/static/media/roulette-wheel.4f897a5a.webp"
+    "url": "/assets/roulette-wheel.4f897a5a.webp"
   },
   {
     "name": "poker.8c9f54a5.svg",
-    "url": "https://win777live.com/_next/static/media/poker.8c9f54a5.svg"
+    "url": "/assets/poker.8c9f54a5.svg"
   },
   {
     "name": "poker-cards.46250a78.webp",
-    "url": "https://win777live.com/_next/static/media/poker-cards.46250a78.webp"
+    "url": "/assets/poker-cards.46250a78.webp"
   },
   {
     "name": "lottery.db50aa65.svg",
-    "url": "https://win777live.com/_next/static/media/lottery.db50aa65.svg"
+    "url": "/assets/lottery.db50aa65.svg"
   },
   {
     "name": "lottery-machine.b7106b6d.webp",
-    "url": "https://win777live.com/_next/static/media/lottery-machine.b7106b6d.webp"
+    "url": "/assets/lottery-machine.b7106b6d.webp"
   },
   {
     "name": "search.275c7cb3.svg",
-    "url": "https://win777live.com/_next/static/media/search.275c7cb3.svg"
+    "url": "/assets/search.275c7cb3.svg"
   },
   {
     "name": "top.d8e0040b.svg",
-    "url": "https://win777live.com/_next/static/media/top.d8e0040b.svg"
+    "url": "/assets/top.d8e0040b.svg"
   },
   {
     "name": "left.7e4ad5ed.svg",
-    "url": "https://win777live.com/_next/static/media/left.7e4ad5ed.svg"
+    "url": "/assets/left.7e4ad5ed.svg"
   },
   {
     "name": "1.08cd7350.png",
-    "url": "https://win777live.com/_next/static/media/1.08cd7350.png"
+    "url": "/assets/1.08cd7350.png"
   },
   {
     "name": "right2.34e1c0b5.svg",
-    "url": "https://win777live.com/_next/static/media/right2.34e1c0b5.svg"
+    "url": "/assets/right2.34e1c0b5.svg"
   },
   {
     "name": "4.d590c92c.png",
-    "url": "https://win777live.com/_next/static/media/4.d590c92c.png"
+    "url": "/assets/4.d590c92c.png"
   },
   {
     "name": "3.33b1d269.png",
-    "url": "https://win777live.com/_next/static/media/3.33b1d269.png"
+    "url": "/assets/3.33b1d269.png"
   },
   {
     "name": "2.27252746.png",
-    "url": "https://win777live.com/_next/static/media/2.27252746.png"
+    "url": "/assets/2.27252746.png"
   },
   {
     "name": "5.14a2ee06.png",
-    "url": "https://win777live.com/_next/static/media/5.14a2ee06.png"
+    "url": "/assets/5.14a2ee06.png"
   },
   {
     "name": "6.90d29530.png",
-    "url": "https://win777live.com/_next/static/media/6.90d29530.png"
+    "url": "/assets/6.90d29530.png"
   },
   {
     "name": "7.f5491eb2.png",
-    "url": "https://win777live.com/_next/static/media/7.f5491eb2.png"
+    "url": "/assets/7.f5491eb2.png"
   },
   {
     "name": "8.b36215be.png",
-    "url": "https://win777live.com/_next/static/media/8.b36215be.png"
+    "url": "/assets/8.b36215be.png"
   },
   {
     "name": "favourite.6e968e7f.svg",
-    "url": "https://win777live.com/_next/static/media/favourite.6e968e7f.svg"
+    "url": "/assets/favourite.6e968e7f.svg"
   },
   {
     "name": "betgamestv.7dc3c7d7.png",
-    "url": "https://win777live.com/_next/static/media/betgamestv.7dc3c7d7.png"
+    "url": "/assets/betgamestv.7dc3c7d7.png"
   },
   {
     "name": "7mojos.5b1cc2e7.png",
-    "url": "https://win777live.com/_next/static/media/7mojos.5b1cc2e7.png"
+    "url": "/assets/7mojos.5b1cc2e7.png"
   },
   {
     "name": "currentGame.5d4f08c2.svg",
-    "url": "https://win777live.com/_next/static/media/currentGame.5d4f08c2.svg"
+    "url": "/assets/currentGame.5d4f08c2.svg"
   },
   {
     "name": "blueprint_gaming.7ee4187a.png",
-    "url": "https://win777live.com/_next/static/media/blueprint_gaming.7ee4187a.png"
+    "url": "/assets/blueprint_gaming.7ee4187a.png"
   },
   {
     "name": "btg.c0c789eb.png",
-    "url": "https://win777live.com/_next/static/media/btg.c0c789eb.png"
+    "url": "/assets/btg.c0c789eb.png"
   },
   {
     "name": "evolution.bca5ffc3.png",
-    "url": "https://win777live.com/_next/static/media/evolution.bca5ffc3.png"
+    "url": "/assets/evolution.bca5ffc3.png"
   },
   {
     "name": "endorphina.45d26b02.png",
-    "url": "https://win777live.com/_next/static/media/endorphina.45d26b02.png"
+    "url": "/assets/endorphina.45d26b02.png"
   },
   {
     "name": "ezugi.520fd372.png",
-    "url": "https://win777live.com/_next/static/media/ezugi.520fd372.png"
+    "url": "/assets/ezugi.520fd372.png"
   },
   {
     "name": "evoplay.03f0bb5d.png",
-    "url": "https://win777live.com/_next/static/media/evoplay.03f0bb5d.png"
+    "url": "/assets/evoplay.03f0bb5d.png"
   },
   {
     "name": "habanero.6c4890e3.png",
-    "url": "https://win777live.com/_next/static/media/habanero.6c4890e3.png"
+    "url": "/assets/habanero.6c4890e3.png"
   },
   {
     "name": "fantasma_games.5d49337c.png",
-    "url": "https://win777live.com/_next/static/media/fantasma_games.5d49337c.png"
+    "url": "/assets/fantasma_games.5d49337c.png"
   },
   {
     "name": "hacksaw.6e258e64.png",
-    "url": "https://win777live.com/_next/static/media/hacksaw.6e258e64.png"
+    "url": "/assets/hacksaw.6e258e64.png"
   },
   {
     "name": "irondog.f00a2103.png",
-    "url": "https://win777live.com/_next/static/media/irondog.f00a2103.png"
+    "url": "/assets/irondog.f00a2103.png"
   },
   {
     "name": "roulette3.600deaa9.svg",
-    "url": "https://win777live.com/_next/static/media/roulette3.600deaa9.svg"
+    "url": "/assets/roulette3.600deaa9.svg"
   },
   {
     "name": "kalamba_games.aa7d6206.png",
-    "url": "https://win777live.com/_next/static/media/kalamba_games.aa7d6206.png"
+    "url": "/assets/kalamba_games.aa7d6206.png"
   },
   {
     "name": "sports-banner-bg.8209c6da.jpg",
-    "url": "https://win777live.com/_next/static/media/sports-banner-bg.8209c6da.jpg"
+    "url": "/assets/sports-banner-bg.8209c6da.jpg"
   },
   {
     "name": "menu.64f93262.svg",
-    "url": "https://win777live.com/_next/static/media/menu.64f93262.svg"
+    "url": "/assets/menu.64f93262.svg"
   },
   {
     "name": "search.ea32d387.svg",
-    "url": "https://win777live.com/_next/static/media/search.ea32d387.svg"
+    "url": "/assets/search.ea32d387.svg"
   },
   {
     "name": "casino.9e4b02a8.svg",
-    "url": "https://win777live.com/_next/static/media/casino.9e4b02a8.svg"
+    "url": "/assets/casino.9e4b02a8.svg"
   },
   {
     "name": "cryptoMarket.9fc47ca5.svg",
-    "url": "https://win777live.com/_next/static/media/cryptoMarket.9fc47ca5.svg"
-  },
-  {
-    "name": "win777-logo.995f22c6.png",
-    "url": "https://win777live.com/_next/static/media/win777-logo.995f22c6.png"
+    "url": "/assets/cryptoMarket.9fc47ca5.svg"
   },
   {
     "name": "sports.5387bbb8.svg",
-    "url": "https://win777live.com/_next/static/media/sports.5387bbb8.svg"
+    "url": "/assets/sports.5387bbb8.svg"
   },
   {
     "name": "home2.e61f912d.svg",
-    "url": "https://win777live.com/_next/static/media/home2.e61f912d.svg"
+    "url": "/assets/home2.e61f912d.svg"
   },
   {
     "name": "sports-banner-players.53725dc0.png",
-    "url": "https://win777live.com/_next/static/media/sports-banner-players.53725dc0.png"
+    "url": "/assets/sports-banner-players.53725dc0.png"
   },
   {
     "name": "tennis.c4968e83.png",
-    "url": "https://win777live.com/_next/static/media/tennis.c4968e83.png"
+    "url": "/assets/tennis.c4968e83.png"
   },
   {
     "name": "football.2efdf0b1.png",
-    "url": "https://win777live.com/_next/static/media/football.2efdf0b1.png"
+    "url": "/assets/football.2efdf0b1.png"
   },
   {
     "name": "basketball.d0d9105e.png",
-    "url": "https://win777live.com/_next/static/media/basketball.d0d9105e.png"
+    "url": "/assets/basketball.d0d9105e.png"
   },
   {
     "name": "horse-racing.13387785.png",
-    "url": "https://win777live.com/_next/static/media/horse-racing.13387785.png"
+    "url": "/assets/horse-racing.13387785.png"
   },
   {
     "name": "esports.84f5317a.png",
-    "url": "https://win777live.com/_next/static/media/esports.84f5317a.png"
+    "url": "/assets/esports.84f5317a.png"
   },
   {
     "name": "american-football.b1544a10.png",
-    "url": "https://win777live.com/_next/static/media/american-football.b1544a10.png"
+    "url": "/assets/american-football.b1544a10.png"
   },
   {
     "name": "59c11a148169.jpg",
@@ -373,7 +361,7 @@
   },
   {
     "name": "play-white.7e8edf14.svg",
-    "url": "https://win777live.com/_next/static/media/play-white.7e8edf14.svg"
+    "url": "/assets/play-white.7e8edf14.svg"
   },
   {
     "name": "628e77439762.jpg",
@@ -413,27 +401,27 @@
   },
   {
     "name": "lucky-streak.f315031f.png",
-    "url": "https://win777live.com/_next/static/media/lucky-streak.f315031f.png"
+    "url": "/assets/lucky-streak.f315031f.png"
   },
   {
     "name": "nolimit.98fa5f7f.png",
-    "url": "https://win777live.com/_next/static/media/nolimit.98fa5f7f.png"
+    "url": "/assets/nolimit.98fa5f7f.png"
   },
   {
     "name": "novomatic.87e346ca.png",
-    "url": "https://win777live.com/_next/static/media/novomatic.87e346ca.png"
+    "url": "/assets/novomatic.87e346ca.png"
   },
   {
     "name": "pgsoft.2293b900.png",
-    "url": "https://win777live.com/_next/static/media/pgsoft.2293b900.png"
+    "url": "/assets/pgsoft.2293b900.png"
   },
   {
     "name": "onetouch.5c06c019.png",
-    "url": "https://win777live.com/_next/static/media/onetouch.5c06c019.png"
+    "url": "/assets/onetouch.5c06c019.png"
   },
   {
     "name": "slotmill.8ea56e8a.png",
-    "url": "https://win777live.com/_next/static/media/slotmill.8ea56e8a.png"
+    "url": "/assets/slotmill.8ea56e8a.png"
   },
   {
     "name": "71935556e70f.png",
@@ -557,47 +545,47 @@
   },
   {
     "name": "casino.dea5f87e.png",
-    "url": "https://win777live.com/_next/static/media/casino.dea5f87e.png"
+    "url": "/assets/casino.dea5f87e.png"
   },
   {
     "name": "blackjack.5ed1c9b4.png",
-    "url": "https://win777live.com/_next/static/media/blackjack.5ed1c9b4.png"
+    "url": "/assets/blackjack.5ed1c9b4.png"
   },
   {
     "name": "live-casino.b9d52e4b.png",
-    "url": "https://win777live.com/_next/static/media/live-casino.b9d52e4b.png"
+    "url": "/assets/live-casino.b9d52e4b.png"
   },
   {
     "name": "dice.bdc6efaf.png",
-    "url": "https://win777live.com/_next/static/media/dice.bdc6efaf.png"
+    "url": "/assets/dice.bdc6efaf.png"
   },
   {
     "name": "slots.b6762e18.png",
-    "url": "https://win777live.com/_next/static/media/slots.b6762e18.png"
+    "url": "/assets/slots.b6762e18.png"
   },
   {
     "name": "promotions.2684d026.png",
-    "url": "https://win777live.com/_next/static/media/promotions.2684d026.png"
+    "url": "/assets/promotions.2684d026.png"
   },
   {
     "name": "scratch-cards.d8bb04ad.png",
-    "url": "https://win777live.com/_next/static/media/scratch-cards.d8bb04ad.png"
+    "url": "/assets/scratch-cards.d8bb04ad.png"
   },
   {
     "name": "vip.cee8642b.png",
-    "url": "https://win777live.com/_next/static/media/vip.cee8642b.png"
+    "url": "/assets/vip.cee8642b.png"
   },
   {
     "name": "wallet.e66fcad1.png",
-    "url": "https://win777live.com/_next/static/media/wallet.e66fcad1.png"
+    "url": "/assets/wallet.e66fcad1.png"
   },
   {
     "name": "cashback-aviator.81bcc5b3.webp",
-    "url": "https://win777live.com/_next/static/media/cashback-aviator.81bcc5b3.webp"
+    "url": "/assets/cashback-aviator.81bcc5b3.webp"
   },
   {
     "name": "language.58fb5410.png",
-    "url": "https://win777live.com/_next/static/media/language.58fb5410.png"
+    "url": "/assets/language.58fb5410.png"
   },
   {
     "name": "svg-1",
@@ -613,14 +601,14 @@
   },
   {
     "name": "sports-banner-dice.08ed6df1.jpg",
-    "url": "https://win777live.com/_next/static/media/sports-banner-dice.08ed6df1.jpg"
+    "url": "/assets/sports-banner-dice.08ed6df1.jpg"
   },
   {
     "name": "user-rank-badge.91867297.png",
-    "url": "https://win777live.com/_next/static/media/user-rank-badge.91867297.png"
+    "url": "/assets/user-rank-badge.91867297.png"
   },
   {
     "name": "user1.6696151a.png",
-    "url": "https://win777live.com/_next/static/media/user1.6696151a.png"
+    "url": "/assets/user1.6696151a.png"
   }
 ]

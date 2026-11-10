@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Gamepad2, Search, ShieldCheck } from "lucide-react";
+import { Gamepad2, Search } from "lucide-react";
 import { gamingRequest, type ProviderCatalogData } from "../lib/gaming";
 import { categoryLinks } from "../site-map";
 import { PageHeading } from "./shared";
@@ -159,10 +159,6 @@ export function ProviderCatalog({
         <Link href="/providers">Providers</Link>
         <Link href="/account/favorites">Favorites</Link>
       </nav>
-      <div className="provider-mode">
-        <ShieldCheck size={18} />
-        <span>Sandbox collection · Play uses test credits only</span>
-      </div>
       {data?.configured && !data.launchEnabled && !collectionIsEmpty(data) && (
         <p className="provider-availability">
           Browse the collection now. Sandbox play will be available once setup
@@ -283,8 +279,7 @@ export function ProviderCatalog({
             </p>
           )}
           <p className="result-summary" role="status">
-            {data.total} {data.total === 1 ? "game" : "games"} · {data.currency}{" "}
-            test credits
+            {data.total} {data.total === 1 ? "game" : "games"}
           </p>
           <ProviderGameGrid games={data.games} />
           <nav className="provider-pagination" aria-label="Game pages">

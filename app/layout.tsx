@@ -3,10 +3,12 @@ import "./globals.css";
 import "./screens/screens.css";
 import { SiteShell } from "./components/site-shell";
 import { PlayerAuthProvider } from "./components/player-auth";
+import { GameWalletProvider } from "./components/game-wallet";
+import { ToastProvider } from "./components/toast-provider";
 export const metadata: Metadata = {
   title: "choicestakes",
   description:
-    "A responsive Next.js recreation of the Win777 casino lobby. Independent frontend demonstration.",
+    "Choicestakes casino and sportsbook. Explore games from our connected providers.",
   robots: { index: false, follow: false },
 };
 export default function RootLayout({
@@ -15,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <PlayerAuthProvider><SiteShell>{children}</SiteShell></PlayerAuthProvider>
+        <ToastProvider><PlayerAuthProvider><GameWalletProvider><SiteShell>{children}</SiteShell></GameWalletProvider></PlayerAuthProvider></ToastProvider>
       </body>
     </html>
   );

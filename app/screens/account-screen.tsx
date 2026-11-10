@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { usePlayer } from "../components/player-auth";
 import type { Player } from "../lib/player";
 import { SandboxWallet } from './provider-games';
+import { BetHistory } from './bet-history';
 import { useEffect, useState } from "react";
 import {
   ArrowDownLeft,
@@ -594,11 +595,11 @@ export function AccountScreen({
   return (
     <div className="page-wrap">
       <PageHeading title={title} eyebrow="MY ACCOUNT" />
-      <Notice>
-        Your player account is active. Game testing uses separate sandbox credits.
-        Other balances and transactions are sample content; deposits, withdrawals,
+      {section !== "bets" && <Notice>
+        Your player account is active. Account previews use sample balances
+        and transactions; deposits, withdrawals,
         and identity verification are not connected.
-      </Notice>
+      </Notice>}
       <div className="account-layout">
         <nav className="panel account-nav" aria-label="Account navigation">
           {accountLinks.map(([label, path]) => (
@@ -620,6 +621,8 @@ export function AccountScreen({
             <Profile player={session.player ?? player} />
           ) : section === "wallet" ? (
             <><SandboxWallet/><WalletScreen /></>
+          ) : section === "bets" ? (
+            <BetHistory />
           ) : section === "deposit" ? (
             <PaymentScreen />
           ) : section === "withdraw" ? (

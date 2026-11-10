@@ -60,7 +60,6 @@ export default async function Page({
             </Link>
           </p>
           <p>Vendor: {game.vendor}</p>
-          <p>Sandbox collection · {data.currency} test credits</p>
           {!data.launchEnabled && (
             <p className="provider-availability">
               Sandbox play will be available once setup is complete.
@@ -69,7 +68,7 @@ export default async function Page({
           <div className="provider-launch-actions">
             {data.launchEnabled && (
               <Link className="primary" href={`/play/${game.uuid}`}>
-                Play with test credits
+                Play game
               </Link>
             )}
             <FavoriteButton game={game} />

@@ -5,7 +5,7 @@ import { ArrowLeft, CheckCircle2, Info, Search } from "lucide-react";
 export function PageHeading({
   title,
   description,
-  eyebrow = "WIN777 LIVE",
+  eyebrow = "CHOICESTAKES",
 }: {
   title: string;
   description?: string;

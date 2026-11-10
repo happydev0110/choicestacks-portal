@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Eye, EyeOff, LockKeyhole, ShieldCheck } from 'lucide-react';
 import { usePlayer } from '../components/player-auth';
+import { useToast } from '../components/toast-provider';
 import { playerDestination, playerRequest, type Player } from '../lib/player';
 
 export function AuthScreen({ pageKey }: { pageKey: string }) {
@@ -11,6 +12,7 @@ export function AuthScreen({ pageKey }: { pageKey: string }) {
   const reset = pageKey === 'forgot-password';
   const router = useRouter();
   const { signedIn, player } = usePlayer();
+  const toast = useToast();
   const [visible, setVisible] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState('');
@@ -29,7 +31,7 @@ export function AuthScreen({ pageKey }: { pageKey: string }) {
     const data = new FormData(form);
     setError('');
     if (register && data.get('password') !== data.get('confirmPassword')) {
-      setError('Passwords must match.'); return;
+      setError('Passwords must match.'); toast.error('Passwords must match.'); return;
     }
     setPending(true);
     try {
@@ -39,11 +41,15 @@ export function AuthScreen({ pageKey }: { pageKey: string }) {
         acceptTerms: data.get('acceptTerms') === 'on',
       } : common);
       signedIn(result.player);
+      toast.success(register ? 'Your account has been created.' : "You're logged in.");
       form.reset();
       const requested = new URLSearchParams(window.location.search).get('next');
       router.replace(playerDestination(requested));
       router.refresh();
-    } catch (reason) { setError(reason instanceof Error ? reason.message : 'Unable to sign in. Please try again.'); }
+    } catch (reason) {
+      const message = reason instanceof Error ? reason.message : 'Unable to sign in. Please try again.';
+      setError(message); toast.error(message);
+    }
     finally { setPending(false); }
   }
 

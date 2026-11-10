@@ -8,15 +8,13 @@ import {
   Home,
   Headphones,
   Trophy,
-  UserRound,
   X,
 } from "lucide-react";
 import { asset } from "../data";
 import { labelRoutes, pageDefinitions } from "../site-map";
 import { Sidebar } from "./sidebar";
 import { SiteFooter } from "./site-footer";
-import { BrandLogo } from "./brand-logo";
-import { usePlayer } from "./player-auth";
+import { SiteHeader } from "./site-header";
 
 const SiteContext = createContext<{
   navigate: (label: string) => void;
@@ -25,23 +23,13 @@ export const useSite = () => useContext(SiteContext);
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  const { player, logout } = usePlayer();
-  const [loggingOut, setLoggingOut] = useState(false);
-  const [logoutError, setLogoutError] = useState('');
-  async function logOut() {
-    if (loggingOut) return;
-    setLoggingOut(true); setLogoutError('');
-    try { await logout(); router.replace('/login'); router.refresh(); }
-    catch (error) { setLogoutError(error instanceof Error ? error.message : 'Unable to log out. Try again.'); }
-    finally { setLoggingOut(false); }
-  }
   const [menu, setMenu] = useState(false);
   const [cookies, setCookies] = useState(false);
   const [preferences, setPreferences] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const language = useRef<HTMLDialogElement>(null);
   useEffect(() => {
-    setCookies(!localStorage.getItem("win777-demo-cookies"));
+    setCookies(!localStorage.getItem("choicestakes-cookie-preferences"));
   }, []);
   useEffect(() => {
     setMenu(false);
@@ -61,7 +49,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         ? "Promotions"
         : (pageDefinitions[pathname.slice(1)]?.title ?? "Casino");
   const consent = (value: string) => {
-    localStorage.setItem("win777-demo-cookies", value);
+    localStorage.setItem("choicestakes-cookie-preferences", value);
     setCookies(false);
     setPreferences(false);
   };
@@ -72,35 +60,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <header className="header">
-        <Link className="brand" href="/" aria-label="Home">
-          <BrandLogo />
-        </Link>
-        <div className="header-actions">
-          <Link
-            className="search-circle"
-            href="/search"
-            aria-label="Search games"
-          >
-            <Search size={18} />
-          </Link>
-          <Link
-            className="account-shortcut"
-            href="/account"
-            aria-label="My account"
-          >
-            <UserRound size={19} />
-          </Link>
-          {player ? <>
-            <Link className="primary player-account-link" href="/account" title={player.displayName}>My Account</Link>
-            <button className="login" onClick={logOut} disabled={loggingOut}>{loggingOut ? 'Logging out…' : 'Log out'}</button>
-          </> : <>
-            <Link className="login" href="/login">Log In</Link>
-            <Link className="primary" href="/register">Join Now</Link>
-          </>}
-        </div>
-      </header>
-      {logoutError && <p className="auth-toast" role="alert">{logoutError}</p>}
+      <SiteHeader />
       <Sidebar
         active={active === "Sportsbook" ? "Sports" : active}
         mobileOpen={menu}

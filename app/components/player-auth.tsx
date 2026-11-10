@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { playerRequest, type Player } from '../lib/player';
+import { useToast } from './toast-provider';
 
 const Context = createContext<{
   player: Player | null; loading: boolean;
@@ -9,6 +10,7 @@ const Context = createContext<{
 export const usePlayer = () => useContext(Context);
 
 export function PlayerAuthProvider({ children }: { children: React.ReactNode }) {
+  const toast = useToast();
   const [player, setPlayer] = useState<Player | null>(null);
   const [loading, setLoading] = useState(true);
   const generation = useRef(0);
@@ -40,10 +42,15 @@ export function PlayerAuthProvider({ children }: { children: React.ReactNode }) 
     channel.current?.postMessage('changed');
   };
   const logout = async () => {
-    await playerRequest('logout', {});
+    try { await playerRequest('logout', {}); }
+    catch (error) {
+      toast.error('Unable to log out. Please try again.');
+      throw error;
+    }
     generation.current++;
     setPlayer(null); setLoading(false);
     channel.current?.postMessage('changed');
+    toast.success("You're logged out.");
   };
   return <Context.Provider value={{ player, loading, signedIn, logout, refresh }}>{children}</Context.Provider>;
 }

@@ -261,7 +261,7 @@ export function AffiliateScreen() {
     <div className="page-wrap">
       <div className="marketing-hero affiliate-hero">
         <div>
-          <span className="eyebrow">WIN777 PARTNERS</span>
+          <span className="eyebrow">CHOICESTAKES PARTNERS</span>
           <h1>
             Build your audience.
             <br />
@@ -386,7 +386,7 @@ export function AffiliateScreen() {
 export function ReferralScreen() {
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState(false);
-  const link = "https://example.com/register?ref=WIN777-DEMO";
+  const link = "https://example.com/register?ref=CHOICESTAKES-DEMO";
   return (
     <div className="page-wrap">
       <div className="marketing-hero">

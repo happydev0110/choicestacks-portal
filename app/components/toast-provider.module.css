@@ -1,0 +1,76 @@
+.viewport {
+  position: fixed;
+  top: max(20px, env(safe-area-inset-top));
+  right: max(20px, env(safe-area-inset-right));
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 362px;
+  max-width: calc(100% - 32px);
+  pointer-events: none;
+}
+.toast {
+  --toast-glow: #58ee87;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #609a61;
+  border-radius: 16px;
+  background: linear-gradient(125deg, #1b7234, #104323);
+  box-shadow: 0 8px 24px #0004, inset 0 1px 0 #d3ffb721;
+  color: #f6fff7;
+  pointer-events: auto;
+  animation: arrive 180ms ease-out;
+}
+.error {
+  --toast-glow: #ff7a7a;
+  border-color: #c65b60;
+  background: linear-gradient(125deg, #9a3037, #581b25);
+  color: #fff7f7;
+}
+.message { display: flex; align-items: center; gap: 12px; min-height: 78px; padding: 15px 49px 15px 16px; }
+.icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  background: radial-gradient(circle at 32% 24%, #a6ffc2, #2fcb62 51%, #168d38);
+  box-shadow: 0 0 20px #56ef775c, inset 0 1px 2px #fff6;
+}
+.error .icon { background: radial-gradient(circle at 32% 24%, #ffb6b8, #ef555d 51%, #b42737); box-shadow: 0 0 20px #ff72725c, inset 0 1px 2px #fff6; }
+.copy { min-width: 0; }
+.copy strong { display: block; font-size: 16px; font-weight: 700; line-height: 1.3; }
+.copy p { margin: 4px 0 0; font-size: 14px; font-weight: 600; line-height: 1.4; color: #b4d2bc; overflow-wrap: anywhere; }
+.error .copy p { color: #f5c6cb; }
+.close {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 11px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #d2efdc66;
+  border-radius: 50%;
+  color: #fff;
+  background: #ffffff12;
+}
+.close:hover { background: #ffffff28; }
+.close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.progress { position: absolute; inset: 0 0 auto; height: 2px; background: var(--toast-glow); opacity: .8; transform-origin: left; animation: countdown var(--toast-duration) linear forwards; }
+@keyframes arrive { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes countdown { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@media (max-width: 700px) {
+  .viewport { top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); max-width: calc(100% - 24px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast, .progress { animation: none; }
+  .progress { display: none; }
+}

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Play,
-  ShieldCheck,
   ExternalLink,
   X,
   RefreshCw,
@@ -12,10 +11,10 @@ import {
   LoaderCircle,
 } from "lucide-react";
 import { usePlayer } from "../components/player-auth";
+import { useGameWallet } from "../components/game-wallet";
+import { useToast } from "../components/toast-provider";
 import {
-  gamingRequest,
   type ProviderGame,
-  type SandboxWalletData,
 } from "../lib/gaming";
 import { PageHeading } from "./shared";
 import { ProviderArtwork } from "./provider-cards";
@@ -31,41 +30,21 @@ export function SandboxWallet({
   refreshKey?: number;
   compact?: boolean;
 }) {
-  const [wallet, setWallet] = useState<SandboxWalletData | null>(null);
-  const [error, setError] = useState("");
-  const [refresh, setRefresh] = useState(0);
+  const { wallet, error, loading, refresh } = useGameWallet();
   useEffect(() => {
-    const controller = new AbortController();
-    setError("");
-    void gamingRequest<SandboxWalletData>(
-      "wallet",
-      undefined,
-      controller.signal,
-    )
-      .then(setWallet)
-      .catch((reason) => {
-        if (!controller.signal.aborted) {
-          setWallet(null);
-          setError(
-            reason instanceof Error
-              ? reason.message
-              : "Unable to load test credits.",
-          );
-        }
-      });
-    return () => controller.abort();
+    if (refreshKey > 0) refresh();
   }, [refreshKey, refresh]);
   return (
     <section className={`panel sandbox-wallet${compact ? " sandbox-wallet-compact" : ""}`}>
       <div className="sandbox-wallet-heading">
         <div>
-          <span className="eyebrow">SANDBOX WALLET</span>
-          <h2>Test credits</h2>
+          <h2>Game balance</h2>
         </div>
         <button
           className="secondary"
-          aria-label="Refresh test balance"
-          onClick={() => setRefresh((value) => value + 1)}
+          aria-label="Refresh game balance"
+          onClick={refresh}
+          disabled={loading}
         >
           <RefreshCw size={16} />
         </button>
@@ -73,17 +52,12 @@ export function SandboxWallet({
       {error ? (
         <p role="status">{error}</p>
       ) : !wallet ? (
-        <p role="status">Loading test credits…</p>
+        <p role="status">Loading game balance…</p>
       ) : (
         <>
           <strong className="sandbox-balance">
             {wallet.balance} <small>{wallet.currency}</small>
           </strong>
-          <p>
-            {wallet.initialized
-              ? "These credits are for game testing and have no cash value."
-              : `${wallet.initialCredits} test credits are allocated once, when you first launch a game.`}
-          </p>
           {!compact && wallet.transactions.length > 0 && (
             <div className="sandbox-history">
               <h3>Recent game activity</h3>
@@ -125,6 +99,7 @@ export function ProviderGamePlayer({
   launchEnabled: boolean;
 }) {
   const router = useRouter();
+  const toast = useToast();
   const session = usePlayer();
   const authenticated = !session.loading && session.player?.id === playerId;
   const { state, retry } = useGameLaunch(
@@ -155,6 +130,7 @@ export function ProviderGamePlayer({
       await playerContainer.current.requestFullscreen();
     } catch {
       setFullscreenError("Fullscreen is unavailable in this browser. You can open the game in a new tab.");
+      toast.error("Fullscreen is unavailable in this browser. You can open the game in a new tab.");
     }
   }
   return (
@@ -164,11 +140,7 @@ export function ProviderGamePlayer({
         eyebrow="CHOICESTAKES"
         description={game.provider}
       />
-      <div className="provider-mode">
-        <ShieldCheck size={18} />
-        <span>Sandbox session · Test credits only</span>
-        <Link href="/casino">All games</Link>
-      </div>
+      <Link className="provider-back-link" href="/casino">← All games</Link>
       {launchEnabled ? (
         <SandboxWallet refreshKey={link ? 1 : 0} compact />
       ) : null}
@@ -211,7 +183,7 @@ export function ProviderGamePlayer({
             ) : (
               <p className="provider-opening" role="status" aria-live="polite">
                 <LoaderCircle size={20} aria-hidden="true" />
-                {authenticated ? "Starting your sandbox session with test credits." : "Checking your player session…"}
+                {authenticated ? "Opening your game session…" : "Checking your player session…"}
               </p>
             )}
             {failed && launchEnabled && authenticated && (

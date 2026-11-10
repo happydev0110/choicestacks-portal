@@ -178,7 +178,7 @@ export function SiteFooter({
           </p>
         </div>
         <p className={styles.disclaimer}>
-          Game listings are supplied by our provider. Sandbox games use test credits with no cash value.
+          Game listings are supplied by our provider.
           Sports odds, offers, and unconnected account features remain sample content.
           Payments and live support are not connected.
         </p>

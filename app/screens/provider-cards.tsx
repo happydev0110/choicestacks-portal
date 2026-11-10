@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Gamepad2, Heart, Play } from "lucide-react";
 import type { ProviderGame } from "../lib/gaming";
+import { useToast } from "../components/toast-provider";
 
 const storageKey = "choicestakes-provider-favorites-v1";
 const changed = "choicestakes-favorites-changed";
@@ -43,6 +44,7 @@ function parseFavorites(raw: string): string[] {
   }
 }
 export function useProviderFavorites() {
+  const toast = useToast();
   const raw = useSyncExternalStore(subscribe, snapshot, () => "[]");
   const ids = useMemo(() => parseFavorites(raw), [raw]);
   const [error, setError] = useState("");
@@ -50,6 +52,7 @@ export function useProviderFavorites() {
     const current = parseFavorites(snapshot());
     if (!current.includes(id) && current.length >= 100) {
       setError("You can save up to 100 favorites on this device.");
+      toast.error("You can save up to 100 favorites on this device.");
       return;
     }
     try {
@@ -63,10 +66,12 @@ export function useProviderFavorites() {
       );
       window.dispatchEvent(new Event(changed));
       setError("");
+      toast.success(current.includes(id) ? "Game removed from favorites." : "Game added to favorites.");
     } catch {
       setError(
         "Your browser could not save this favorite. Check its storage settings.",
       );
+      toast.error("Your browser could not save this favorite. Check its storage settings.");
     }
   }
   return { ids, toggle, error };

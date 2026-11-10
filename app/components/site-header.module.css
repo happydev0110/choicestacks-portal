@@ -1,0 +1,79 @@
+.header:global(.header) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 20px;
+  height: 65px;
+  padding: 0 20px;
+  background: #111a32;
+}
+.brand { display: block; width: 224px; max-width: 100%; }
+.center { justify-self: center; min-width: 0; }
+.actions { display: flex; align-items: center; justify-self: end; gap: 12px; min-width: 0; }
+.actions > a { white-space: nowrap; }
+.circle, .profile, .balance {
+  display: inline-flex; align-items: center; border: 1px solid #23335b; border-radius: 999px; background: #1b284b;
+}
+.circle { justify-content: center; width: 40px; height: 40px; flex-shrink: 0; color: #ecf4ff; }
+.balance { gap: 6px; padding: 3px; background: #101a31; }
+.balanceValue { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.currency { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #1b284b; border: 1px solid #23335b; font-size: 12px; flex-shrink: 0; }
+.amount { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; max-width: 155px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.addFunds { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #3bde7e; color: #fff; flex-shrink: 0; }
+.addFunds:hover { background: #54ed91; }
+.profile { gap: 9px; padding: 3px 16px 3px 3px; height: 40px; color: #fff; font-weight: 700; }
+.avatar { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; border: 1px solid #36718d; background: linear-gradient(135deg, #164663, #0b2038); color: #81e3f5; font-size: 12px; letter-spacing: .03em; }
+.username { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.circle:hover, .profile:hover, .selected { border-color: #258fc5; background: #203353; }
+.header a:focus-visible, .header button:focus-visible { outline: 2px solid #6bd9ff; outline-offset: 3px; }
+.anchor { position: relative; display: flex; }
+.popup { position: absolute; right: 0; top: calc(100% + 8px); border: 1px solid #17658d; border-radius: 16px; background: rgb(18 27 47 / 97%); box-shadow: 0 16px 45px #0005; backdrop-filter: blur(18px); color: #f4f5fc; max-width: calc(100vw - 24px); z-index: 1; }
+.accountMenu { width: 256px; padding: 12px 16px; }
+.menuItem { display: flex; align-items: center; gap: 12px; min-height: 66px; padding: 8px 10px; border-radius: 10px; width: 100%; text-align: left; font-size: 15px; font-weight: 600; }
+.menuItem:hover, .menuItem:focus-visible { background: #1c304a; }
+.menuIcon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #1c5d83; background: #101c32; flex-shrink: 0; }
+.divider { height: 1px; background: #2a354b; margin: 8px 0; }
+.logout { color: #91a9cc; }
+.logout:disabled { opacity: .6; cursor: wait; }
+.error { padding: 0 10px 8px; color: #ffb5b5; font-size: 12px; }
+.notifications { width: 400px; padding: 18px 20px; }
+.notificationHeading { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 13px; border-bottom: 1px solid #2a354b; }
+.notificationHeading h2 { font-size: 14px; font-weight: 700; text-transform: uppercase; margin: 0; }
+.notificationHeading button { font-size: 13px; font-weight: 600; color: #929bad; opacity: .5; cursor: default; }
+.emptyNotifications { min-height: 122px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #8ca7cd; }
+.emptyNotifications svg { color: #607b9f; }
+.emptyNotifications p { margin: 0; font-size: 14px; }
+.skeleton { display: block; height: 38px; width: 176px; border-radius: 25px; background: #1b284b; }
+@media (max-width: 1000px) {
+  .username { max-width: 125px; }
+  .brand { width: 190px; }
+  .actions { gap: 8px; }
+}
+@media (max-width: 850px) {
+  .username { display: none; }
+  .profile { width: 40px; padding: 3px; }
+}
+@media (max-width: 700px) {
+  .header:global(.header) { height: 57px; padding: 0 12px; gap: 8px; grid-template-columns: auto minmax(0, 1fr) auto; }
+  .brand { width: 125px; }
+  .actions { gap: 7px; }
+  .search { display: none; }
+  .circle, .profile { width: 34px; height: 34px; }
+  .profile { padding: 2px; }
+  .avatar { width: 28px; height: 28px; font-size: 11px; }
+  .balance { gap: 5px; padding: 2px; max-width: 100%; }
+  .balanceValue { gap: 4px; }
+  .currency { width: 23px; height: 23px; font-size: 11px; }
+  .amount { font-size: 13px; max-width: 90px; }
+  .addFunds { width: 29px; height: 29px; }
+  .addFunds svg { width: 20px; }
+  .popup { position: fixed; top: 63px; right: 12px; max-width: calc(100% - 24px); max-height: calc(100dvh - 135px); overflow-y: auto; }
+  .skeleton { width: 125px; height: 34px; }
+}
+@media (max-width: 360px) {
+  .header:global(.header) { padding-inline: 8px; gap: 6px; }
+  .brand { width: 105px; }
+  .actions { gap: 5px; }
+  .amount { max-width: 62px; }
+  .circle, .profile { width: 32px; height: 32px; }
+  .avatar { width: 26px; height: 26px; }
+}

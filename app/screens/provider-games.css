@@ -19,21 +19,11 @@
 .provider-entry a {
   color: #63d5f5;
 }
-.provider-mode {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #103144;
-  border: 1px solid #285f76;
-  border-radius: 12px;
-  color: #a9e6f2;
-  padding: 14px 18px;
+.provider-back-link {
+  display: inline-block;
+  color: #63d5f5;
   margin-bottom: 22px;
   font-size: 12px;
-}
-.provider-mode > a {
-  margin-left: auto;
-  white-space: nowrap;
 }
 .provider-empty {
   text-align: center;
@@ -329,14 +319,6 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-  }
-  .provider-mode {
-    font-size: 11px;
-    flex-wrap: wrap;
-  }
-  .provider-mode span {
-    flex: 1;
-    min-width: 180px;
   }
   .provider-launch {
     grid-template-columns: 1fr;

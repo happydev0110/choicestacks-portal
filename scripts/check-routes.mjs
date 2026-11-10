@@ -19,7 +19,7 @@ const dynamicRoutes = catalog.games.slice(0, 3).map((game) => `/games/${game.uui
 const expectedGameNames = new Map(catalog.games.slice(0, 3).map((game) => [`/games/${game.uuid}`, game.name]));
 dynamicRoutes.push(...catalog.providers.map((provider) => `/providers/${encodeURIComponent(provider)}`));
 routes.push(...dynamicRoutes);
-const protectedRoutes = ['', '/profile', '/wallet', '/deposit', '/withdraw', '/transactions', '/bonuses', '/favorites', '/security', '/verification', '/responsible-gaming'].map((section) => '/account' + section);
+const protectedRoutes = ['', '/profile', '/wallet', '/bets', '/deposit', '/withdraw', '/transactions', '/bonuses', '/favorites', '/security', '/verification', '/responsible-gaming'].map((section) => '/account' + section);
 protectedRoutes.push('/play/00000000-0000-4000-8000-000000000001');
 protectedRoutes.push(...catalog.games.slice(0, 1).map((game) => `/play/${game.uuid}`));
 const queue = [...routes, ...protectedRoutes];

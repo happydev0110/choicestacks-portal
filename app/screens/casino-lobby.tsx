@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Gamepad2,
   Search,
-  ShieldCheck,
   X,
 } from "lucide-react";
 import {
@@ -298,9 +297,7 @@ export function CasinoLobby({
       </nav>
       <div className="casino-collection-info">
         <span>
-          <ShieldCheck size={15} />
-          Sandbox · Test credits only
-          {data?.total ? ` · ${data.total} games` : ""}
+          {data ? `${data.total} ${data.total === 1 ? "game" : "games"}` : "Game collection"}
         </span>
         <Link href="/all-games">All games</Link>
         <Link href="/providers">Providers</Link>

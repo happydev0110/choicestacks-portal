@@ -26,6 +26,12 @@ MySQL must be enabled and migrated for registration/login to succeed; there is n
 
 ## Provider games
 
+Global toast notifications use `useToast()` from `app/components/toast-provider.tsx`. Call `toast.success(message)` or `toast.error(message)` after a user action. Success cards are green and errors are red; both include a close button. They survive client navigation, show at most three cards, and suppress identical visible messages. Success cards close after five seconds and errors after seven, pausing on hover, keyboard focus, or a hidden tab. Login, registration, both logout controls, favorites, and game-launch/fullscreen failures use this shared component; passive background refreshes remain quiet.
+
+The signed-in header shows the saved display name with an initials avatar, the current game balance, notifications, and an account menu. The green plus opens Wallet; payments are not connected. The header and game screens share one wallet request, refreshed on navigation, returning to the tab, and every 30 seconds while visible. An unavailable wallet displays a dash rather than a zero balance. Login checks use a loading placeholder instead of briefly showing guest controls.
+
+Bet History (`/account/bets`) uses the wallet API's latest 20 game ledger entries. It is recent activity, not a complete paginated betting report; the existing endpoint does not return game names or round IDs. The notification panel currently has an empty state and disabled Mark All as Read, ready for a future notification service. Menus support keyboard navigation, Escape, outside-click dismissal, and mobile layouts.
+
 Home, Casino, Search, category pages, the provider directory, public `/games/{uuid}` details, and browser favorites all use the synchronized provider catalog. Cards display the provider name, artwork, and UUID; there is no sample-game fallback. `/play/{uuid}` requires sign-in and gameplay remains disabled until callback setup is complete. The account wallet shows a separate sandbox test balance. Categories are assigned manually; unassigned games remain visible in All Games. See `../choicestakes-backend/docs/provider-catalog.md` for deployment and classification commands.
 
 Clicking any provider game card opens `/play/{uuid}` directly, with prefetch disabled. Signed-out players return to their selected game after login or registration. Once the player session is confirmed, the player automatically makes one sandbox launch request and embeds the returned game URL. Effect replays and account refreshes reuse the same attempt; failures are retried only by clicking Retry (or the optional demo fallback). Each explicit retry opens a new session. Launch responses are ignored after leaving the player, and game URLs are kept only in memory. Fullscreen, open-in-new-tab, and close controls are available in the player. If `launchEnabled` is false, the page shows an unavailable message and sends no launch request. No provider credentials or environment settings are changed by this UI flow.
@@ -106,7 +112,9 @@ Browser local storage holds only cookie choices, provider game UUIDs (up to 100 
 - `app/layout.tsx`: metadata and root layout
 - `scripts/check-routes.mjs`: page and link checks
 
-Reference artwork and fonts in `public/assets/` were obtained from the public reference at https://win777live.com/ for this requested design exercise. They remain the property of their respective owners; replace them with your licensed assets before production use. No third-party JavaScript was copied.
+Reference artwork and fonts in `public/assets/` were obtained from the supplied design reference. They remain the property of their respective owners; replace them with your licensed assets before production use. No third-party JavaScript was copied. The active wordmark is `choicestakes-wordmark.png`; unused legacy wordmarks have been removed.
+
+`asset-sources.json` records local asset URLs and available CDN references. The optional artwork helper reuses existing files. To restore a missing relative asset, set `ASSET_SOURCE_ORIGIN` to the HTTPS origin of your authorized artwork source before running `node scripts/sync-casino-assets.mjs`.
 
 ## Casino category setup
 
