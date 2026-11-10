@@ -178,11 +178,11 @@ export function SiteFooter({
           </p>
         </div>
         <p className={styles.disclaimer}>
-          Independent frontend demonstration. Games, odds, offers, account
-          balances, and transactions are sample content. No real-money games,
-          payments, or live support are connected. Player registration and sign-in are available.
+          Game listings are supplied by our provider. Sandbox games use test credits with no cash value.
+          Sports odds, offers, and unconnected account features remain sample content.
+          Payments and live support are not connected.
         </p>
-        <p className={styles.copyright}>© 2026 · Win777</p>
+        <p className={styles.copyright}>© 2026 · Choicestakes</p>
       </div>
       <dialog
         className={styles.chatDialog}

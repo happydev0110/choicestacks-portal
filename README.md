@@ -26,27 +26,27 @@ MySQL must be enabled and migrated for registration/login to succeed; there is n
 
 ## Provider games
 
-Visit `/provider-games` for the synchronized provider catalog, search, filters, pagination and availability states. With sandbox keys configured and the catalog imported, `/casino` and `/providers` use this collection even before gameplay is enabled. A status message explains when sandbox play is pending. `/play/{uuid}` requires sign-in; its launch buttons remain disabled until the backend reports `launchEnabled=true`. Once enabled it offers sandbox sessions with test credits, optional vendor demo mode, an iframe and an external-tab fallback. The account wallet shows a separate sandbox balance. Existing reference/category pages remain previews.
+Home, Casino, Search, category pages, the provider directory, public `/games/{uuid}` details, and browser favorites all use the synchronized provider catalog. Cards display the provider name, artwork, and UUID; there is no sample-game fallback. `/play/{uuid}` requires sign-in and gameplay remains disabled until callback setup is complete. The account wallet shows a separate sandbox test balance. Categories are assigned manually; unassigned games remain visible in All Games. See `../choicestakes-backend/docs/provider-catalog.md` for deployment and classification commands.
 
 Add sandbox credentials only to the backend `.env`, then run `npm run games:check` and `npm run games:sync` there to test access and import games without launching anything. For actual gameplay, configure the public HTTPS callback in both `.env` and the provider back office, set `APIMATIC_ENABLED=true`, and restart the backend. No provider secret belongs in the frontend. Without credentials, the collection displays a coming-soon state. Actual vendor gameplay cannot be verified until callback setup is complete.
 
 ## Included
 
-- Dedicated `/casino` lobby matching the reference: wide static banner, compact search, five illustrated category links, and six horizontal game collections. Cards support automatic advance, pause/resume, arrow controls, mouse dragging, and touch swiping. Reduced-motion preferences pause automatic advance by default.
+- Shared provider catalog with search, provider filters, category links, and complete server-side pagination.
 
 - Desktop icon rail expands on hover/focus into a 220px menu and collapses when leaving; content stays in place
 - Mobile/tablet bottom navigation opens a full-height drawer, with Escape, close button, backdrop dismissal, and background scroll locking
 - Swiper promotional carousel: 4.5-second autoplay, 900ms transitions, mouse dragging/touch swiping, rewind, and responsive pagination (fixed-width desktop cards and one mobile card)
 - Autoplay continues while hovering or after manual interaction; an explicit pause/resume button controls it. Reduced motion uses instant slide changes instead of disabling autoplay.
-- Dedicated game categories with search, provider filtering, alphabetical sorting, and load-more pagination
-- Provider directory and 39 provider routes; providers without local titles show a clear empty state
-- 110 game detail pages with preview areas, related games, and browser-saved favorites
+- Dedicated game categories with search, provider filtering, alphabetical sorting, and server-side pagination
+- Dynamic provider directory with counts from MySQL and `/providers/{provider}` routes.
+- Dynamic `/games/{uuid}` detail pages with browser-saved favorites and authenticated sandbox launch links.
 - Sportsbook with sport/live filters, fictional fixtures, selectable odds, and a calculated preview bet slip
 - Promotion filters and three offer detail pages, loyalty tier selector and XP explorer, affiliate and referral pages, and a crypto quote preview
 - FAQ search and accordions, validated contact/complaint forms, and eight draft policy pages
 - MySQL-backed login and registration, session persistence, logout, and protected account pages; password recovery placeholder
 - Eleven account pages: overview, profile, wallet, deposit, withdrawal, transactions, bonuses, favorites, security, verification, and play limits
-- Recent/biggest sample wins and persisted local cookie preferences
+- Persisted local cookie preferences; fabricated wins and popularity rankings are removed.
 - Locally stored reference artwork and fonts, without runtime requests to the source site
 - Shared reference-style footer with a rounded gradient panel, five desktop link columns, three mobile columns, support avatar card, responsible-play badges, cookie settings, and a local support preview. The legal area retains the independent-demo notice instead of reproducing the operator's license claims.
 
@@ -55,7 +55,7 @@ Add sandbox credentials only to the backend `.env`, then run `npm run games:chec
 | Section            | Routes                                                                                                                                                                                                                                     |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Lobby & catalogs   | `/`, `/casino`, `/new-games`, `/slots`, `/live`, `/crash-instant`, `/table-cards`, `/lotto-scratch`, `/roulette`, `/poker`, `/search`                                                                                                      |
-| Providers & games  | `/provider-games`, `/play/{uuid}`, `/providers`, provider slugs such as `/evolution` and `/pgsoft`, `/games/{game-slug}` |
+| Providers & games  | `/provider-games`, `/play/{uuid}`, `/providers`, `/providers/{provider}`, `/games/{uuid}` |
 | Sports             | `/sportsbook`                                                                                                                                                                                                                              |
 | Promotions         | `/promotions`, `/promotions/first-deposit`, `/promotions/second-deposit`, `/promotions/third-deposit`                                                                                                                                      |
 | Rewards & partners | `/loyalty-tiers`, `/affiliates`, `/refer-a-friend`                                                                                                                                                                                         |
@@ -65,7 +65,7 @@ Add sandbox credentials only to the backend `.env`, then run `npm run games:chec
 | Authentication     | `/login`, `/register`, `/forgot-password`                                                                                                                                                                                                  |
 | Account            | `/account`, `/account/profile`, `/account/wallet`, `/account/deposit`, `/account/withdraw`, `/account/transactions`, `/account/bonuses`, `/account/favorites`, `/account/security`, `/account/verification`, `/account/responsible-gaming` |
 
-`app/site-map.ts` is the route registry. The catch-all App Router page statically generates public routes. The dedicated `/account/[[...section]]` route checks authentication on the server for every account page. Unknown paths return a custom 404. Add games in `app/data.ts` or providers in `app/site-map.ts` to extend their collections.
+`app/site-map.ts` is the route registry. The catch-all App Router page statically generates public routes. The dedicated `/account/[[...section]]` route checks authentication on the server for every account page. Unknown paths return a custom 404. Games and providers are resolved at runtime from MySQL; run the backend catalog sync to update them.
 
 ## Validation
 
@@ -81,14 +81,14 @@ The route check reads the production build manifest and checks every generated p
 
 Player authentication is connected to MySQL. API-MATIC sandbox integration is implemented and awaits provider configuration; production games, payments, live odds, bonuses and customer support remain unconnected. The sandbox wallet uses actual test-credit records from the backend. Other balance/transaction displays are fixed sample records; previews never change them. Crypto rates are fixed illustrative values, not market prices. Identity uploads are unavailable. Play-limit and security screens illustrate controls without enforcing real account restrictions. Policy pages are original demo drafts and need approved operational content before launch.
 
-Browser local storage holds only cookie choices, favorite game names, and optional currency preferences. Form previews, bet selections, and quote inputs remain in component memory and reset on navigation. Preferred currency does not convert fixed USD sample balances.
+Browser local storage holds only cookie choices, provider game UUIDs (up to 100 favorites), and optional currency preferences. Form previews, bet selections, and quote inputs remain in component memory and reset on navigation. Preferred currency does not convert fixed USD sample balances.
 
 ## Source files
 
 - `app/page.tsx`: homepage lobby
 - `app/components/site-shell.tsx`: shared layout and site navigation
 - `app/components/site-footer.tsx` and `app/components/site-footer.module.css`: shared responsive footer and support preview
-- `app/site-map.ts`: route definitions, provider directory, and navigation mappings
+- `app/site-map.ts`: static page definitions and navigation mappings
 - `app/[...path]/page.tsx`: static route generation and page metadata
 - `app/api/player/[action]/route.ts`: same-origin authentication proxy
 - `app/account/[[...section]]/page.tsx`: server-side account protection
@@ -96,8 +96,8 @@ Browser local storage holds only cookie choices, favorite game names, and option
 - `app/screens/auth-screen.tsx`: login and registration forms
 - `app/screens/`: catalog, sports, marketing, support, and account components
 - `app/screens/screens.css`: responsive page styles
-- `app/data.ts`: original homepage catalog and asset references
-- `app/casino-data.ts`: casino collections and the combined game catalog
+- `app/data.ts`: promotional banners and asset references
+- `app/screens/provider-catalog.tsx`: shared catalog, filters, pagination, and provider directory
 - `app/screens/casino-screen.tsx` and `app/screens/casino.css`: dedicated casino layout and interactions
 - `app/globals.css`: original lobby styles
 - `app/layout.tsx`: metadata and root layout

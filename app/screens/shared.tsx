@@ -1,9 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { ArrowLeft, CheckCircle2, Info, Play, Search } from "lucide-react";
-import { asset, type Game } from "../data";
-import { gameHref } from "../site-map";
+import { ArrowLeft, CheckCircle2, Info, Search } from "lucide-react";
 
 export function PageHeading({
   title,
@@ -59,48 +56,4 @@ export function EmptyState({
       </Link>
     </div>
   );
-}
-export function GameGrid({ items }: { items: Game[] }) {
-  return (
-    <div className="catalog-grid">
-      {items.map((game) => (
-        <Link
-          className="catalog-card"
-          href={gameHref(game.name)}
-          key={game.name}
-        >
-          <div className="catalog-art">
-            <img src={asset(game.image)} alt="" loading="lazy" />
-            <span className="catalog-play">
-              <Play fill="currentColor" size={27} />
-            </span>
-          </div>
-          <strong>{game.name}</strong>
-          <small>{game.provider}</small>
-        </Link>
-      ))}
-    </div>
-  );
-}
-export function useFavorites() {
-  const [favorites, setFavorites] = useState<string[]>([]);
-  useEffect(() => {
-    try {
-      const saved = JSON.parse(
-        localStorage.getItem("win777-favorites") ?? "[]",
-      );
-      if (Array.isArray(saved))
-        setFavorites(saved.filter((x) => typeof x === "string"));
-    } catch {}
-  }, []);
-  function toggle(name: string) {
-    setFavorites((current) => {
-      const next = current.includes(name)
-        ? current.filter((x) => x !== name)
-        : [...current, name];
-      localStorage.setItem("win777-favorites", JSON.stringify(next));
-      return next;
-    });
-  }
-  return { favorites, toggle };
 }

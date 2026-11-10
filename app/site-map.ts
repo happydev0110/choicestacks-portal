@@ -1,4 +1,4 @@
-import { allGames as games } from "./casino-data";
+
 
 export type PageKind =
   | "casino"
@@ -15,8 +15,7 @@ export type PageKind =
   | "faq"
   | "policy"
   | "auth"
-  | "account"
-  | "game";
+  | "account";
 export type PageDefinition = {
   title: string;
   kind: PageKind;
@@ -29,7 +28,6 @@ export const slugify = (value: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
-export const gameHref = (name: string) => `/games/${slugify(name)}`;
 export const categoryLinks = [
   ["All Games", "/casino"],
   ["New Games", "/new-games"],
@@ -40,47 +38,6 @@ export const categoryLinks = [
   ["Lotto & Scratch", "/lotto-scratch"],
   ["Roulette", "/roulette"],
   ["Poker", "/poker"],
-];
-export const providerList = [
-  ["7mojos", "7Mojos", "7mojos.5b1cc2e7.png"],
-  ["betgamestv", "BetGames", "betgamestv.7dc3c7d7.png"],
-  ["blueprint_gaming", "Blueprint Gaming", "blueprint_gaming.7ee4187a.png"],
-  ["btg", "Big Time Gaming", "btg.c0c789eb.png"],
-  ["endorphina", "Endorphina", "endorphina.45d26b02.png"],
-  ["evolution", "Evolution", "evolution.bca5ffc3.png"],
-  ["evoplay", "Evoplay", "evoplay.03f0bb5d.png"],
-  ["ezugi", "Ezugi", "ezugi.520fd372.png"],
-  ["fantasma_games", "Fantasma Games", "fantasma_games.5d49337c.png"],
-  ["habanero", "Habanero", "habanero.6c4890e3.png"],
-  ["hacksaw", "Hacksaw", "hacksaw.6e258e64.png"],
-  ["irondog", "Iron Dog", "irondog.f00a2103.png"],
-  ["kalamba_games", "Kalamba Games", "kalamba_games.aa7d6206.png"],
-  ["lucky-streak", "Lucky Streak", "lucky-streak.f315031f.png"],
-  ["netent", "NetEnt", ""],
-  ["nolimit", "Nolimit City", "nolimit.98fa5f7f.png"],
-  ["novomatic", "Novomatic", "novomatic.87e346ca.png"],
-  ["onetouch", "OneTouch", "onetouch.5c06c019.png"],
-  ["pgsoft", "PG Soft", "pgsoft.2293b900.png"],
-  ["playtech", "Playtech", ""],
-  ["pragmaticplay", "Pragmatic Play", ""],
-  ["quickspin", "Quickspin", ""],
-  ["red_tiger", "Red Tiger", ""],
-  ["redrake", "Red Rake", ""],
-  ["rubyplay", "RubyPlay", ""],
-  ["skywind", "Skywind", ""],
-  ["slotmill", "Slotmill", "slotmill.8ea56e8a.png"],
-  ["smartsoft", "SmartSoft", ""],
-  ["spribe", "Spribe", ""],
-  ["thunderkick", "Thunderkick", ""],
-  ["turbogames", "Turbo Games", ""],
-  ["wazdan", "Wazdan", ""],
-  ["yggdrasil", "Yggdrasil", ""],
-  ["bgaming", "BGaming", ""],
-  ["tada", "TADA", ""],
-  ["jili", "JILI", ""],
-  ["amusnet", "Amusnet", ""],
-  ["push-gaming", "Push Gaming", ""],
-  ["inout", "InOut", ""],
 ];
 export const policyLinks = [
   ["Terms & Legal", "terms-of-service"],
@@ -168,8 +125,6 @@ export const pageDefinitions: Record<string, PageDefinition> = {
 for (const [name, path] of categoryLinks)
   if (!pageDefinitions[path.slice(1)])
     pageDefinitions[path.slice(1)] = { title: name, kind: "catalog" };
-for (const [slug, title] of providerList)
-  pageDefinitions[slug] = { title, kind: "catalog", provider: title };
 for (const [title, slug] of policyLinks)
   pageDefinitions[`terms/${slug}`] = { title, kind: "policy" };
 for (const [title, path] of accountLinks)
@@ -181,11 +136,6 @@ for (const offer of promotionOffers)
   pageDefinitions[`promotions/${offer.slug}`] = {
     title: offer.title,
     kind: "promotion",
-  };
-for (const game of games)
-  pageDefinitions[`games/${slugify(game.name)}`] = {
-    title: game.name,
-    kind: "game",
   };
 export const labelRoutes: Record<string, string> = {
   Home: "/",

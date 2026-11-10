@@ -1,6 +1,6 @@
 "use client";
 import { type PageDefinition } from "../site-map";
-import { CatalogScreen, GameScreen, ProvidersScreen } from "./catalog-screen";
+import { ProviderCatalog, ProviderDirectory } from "./provider-catalog";
 import { SportsScreen } from "./sports-screen";
 import {
   AffiliateScreen,
@@ -12,8 +12,6 @@ import {
 } from "./marketing-screen";
 import { ContactScreen, FaqScreen, PolicyScreen } from "./support-screen";
 import { AuthScreen } from "./auth-screen";
-import { CasinoScreen } from "./casino-screen";
-import { ConnectedCasino } from './provider-games';
 export function FrontendPage({
   definition,
   pageKey,
@@ -23,13 +21,11 @@ export function FrontendPage({
 }) {
   switch (definition.kind) {
     case "casino":
-      return <ConnectedCasino><CasinoScreen /></ConnectedCasino>;
+      return <ProviderCatalog key="casino" />;
     case "catalog":
-      return <CatalogScreen definition={definition} pageKey={pageKey} />;
+      return <ProviderCatalog key={pageKey} title={definition.title} category={pageKey === "search" ? "" : pageKey} />;
     case "providers":
-      return <ConnectedCasino><ProvidersScreen /></ConnectedCasino>;
-    case "game":
-      return <GameScreen definition={definition} />;
+      return <ProviderDirectory />;
     case "sports":
       return <SportsScreen />;
     case "promotions":

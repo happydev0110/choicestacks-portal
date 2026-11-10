@@ -9,6 +9,7 @@ export type ProviderGame = {
 export type ProviderCatalogData = {
   games: ProviderGame[];
   providers: string[];
+  providerCounts: { provider: string; total: number }[];
   total: number;
   page: number;
   perPage: number;

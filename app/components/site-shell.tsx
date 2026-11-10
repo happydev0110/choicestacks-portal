@@ -11,8 +11,8 @@ import {
   UserRound,
   X,
 } from "lucide-react";
-import { asset, type Game } from "../data";
-import { gameHref, labelRoutes, pageDefinitions } from "../site-map";
+import { asset } from "../data";
+import { labelRoutes, pageDefinitions } from "../site-map";
 import { Sidebar } from "./sidebar";
 import { SiteFooter } from "./site-footer";
 import { BrandLogo } from "./brand-logo";
@@ -20,8 +20,7 @@ import { usePlayer } from "./player-auth";
 
 const SiteContext = createContext<{
   navigate: (label: string) => void;
-  openGame: (game: Game) => void;
-}>({ navigate: () => {}, openGame: () => {} });
+}>({ navigate: () => {} });
 export const useSite = () => useContext(SiteContext);
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -68,7 +67,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   };
   return (
     <SiteContext.Provider
-      value={{ navigate, openGame: (game) => router.push(gameHref(game.name)) }}
+      value={{ navigate }}
     >
       <a className="skip-link" href="#main-content">
         Skip to content

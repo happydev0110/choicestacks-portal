@@ -16,14 +16,12 @@ import {
   UserRound,
   Wallet,
 } from "lucide-react";
-import { allGames as games } from "../casino-data";
+import { ProviderCatalog } from "./provider-catalog";
 import { accountLinks, promotionOffers } from "../site-map";
 import {
   EmptyState,
-  GameGrid,
   Notice,
   PageHeading,
-  useFavorites,
 } from "./shared";
 
 const transactions = [
@@ -405,22 +403,7 @@ function Bonuses() {
   );
 }
 function Favorites() {
-  const { favorites } = useFavorites();
-  const saved = games.filter((g) => favorites.includes(g.name));
-  return (
-    <section className="panel">
-      <h2>
-        <Heart size={22} /> Your favorites
-      </h2>
-      {saved.length ? (
-        <GameGrid items={saved} />
-      ) : (
-        <EmptyState title="Your collection starts here">
-          Open a game and choose Add to favorites to save it on this device.
-        </EmptyState>
-      )}
-    </section>
-  );
+  return <ProviderCatalog favoritesOnly embedded />;
 }
 function Security() {
   return <section className="panel">
