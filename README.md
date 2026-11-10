@@ -98,9 +98,16 @@ Browser local storage holds only cookie choices, provider game UUIDs (up to 100 
 - `app/screens/screens.css`: responsive page styles
 - `app/data.ts`: promotional banners and asset references
 - `app/screens/provider-catalog.tsx`: shared catalog, filters, pagination, and provider directory
-- `app/screens/casino-screen.tsx` and `app/screens/casino.css`: dedicated casino layout and interactions
+- `app/casino/page.tsx` and `app/casino/loading.tsx`: dynamic server-rendered casino lobby and matching loading state
+- `app/screens/casino-lobby.tsx` and `app/screens/casino.css`: permanent casino layout, provider search and category rows
 - `app/globals.css`: original lobby styles
 - `app/layout.tsx`: metadata and root layout
 - `scripts/check-routes.mjs`: page and link checks
 
 Reference artwork and fonts in `public/assets/` were obtained from the public reference at https://win777live.com/ for this requested design exercise. They remain the property of their respective owners; replace them with your licensed assets before production use. No third-party JavaScript was copied.
+
+## Casino category setup
+
+Deploy the matching backend first: the lobby uses `GET /api/v1/gaming/lobby`. Set the portal's server-only `BACKEND_URL`, rebuild and restart the portal. `/casino` keeps its layout before and after hydration; `/all-games` provides the full grid. Existing category pages read their complete categories with pagination.
+
+The provider does not supply verified category tags. In the backend, run `npm run games:categories:export -- ./game-categories.json`, review the game names/UUIDs and fill in their `categories`, then run `npm run games:classify -- ./game-categories.json`. Supported tags are `featured`, `new-games`, `slots`, `live`, `crash-instant`, `table-cards`, `lotto-scratch`, `roulette`, and `poker`. Games without assignments remain in All Games. Category imports take effect on the next page load without a rebuild and survive provider sync. See the backend's `docs/provider-catalog.md` for the file format and full deployment instructions.

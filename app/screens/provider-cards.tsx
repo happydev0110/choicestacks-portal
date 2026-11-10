@@ -114,23 +114,28 @@ export function ProviderArtwork({ game }: { game: ProviderGame }) {
     <Gamepad2 size={46} aria-label="Game artwork unavailable" />
   );
 }
+export function ProviderGameCard({ game }: { game: ProviderGame }) {
+  return (
+    <article className="provider-game-card">
+      <Link className="catalog-card" href={`/games/${game.uuid}`}>
+        <div className="catalog-art provider-art">
+          <ProviderArtwork game={game} />
+          <span className="catalog-play">
+            <Play size={28} />
+          </span>
+        </div>
+        <strong>{game.name}</strong>
+        <small>{game.provider}</small>
+      </Link>
+      <FavoriteButton game={game} compact />
+    </article>
+  );
+}
 export function ProviderGameGrid({ games }: { games: ProviderGame[] }) {
   return (
     <div className="catalog-grid">
       {games.map((game) => (
-        <article key={game.uuid} className="provider-game-card">
-          <Link className="catalog-card" href={`/games/${game.uuid}`}>
-            <div className="catalog-art provider-art">
-              <ProviderArtwork game={game} />
-              <span className="catalog-play">
-                <Play size={28} />
-              </span>
-            </div>
-            <strong>{game.name}</strong>
-            <small>{game.provider}</small>
-          </Link>
-          <FavoriteButton game={game} compact />
-        </article>
+        <ProviderGameCard key={game.uuid} game={game} />
       ))}
     </div>
   );

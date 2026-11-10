@@ -5,7 +5,7 @@ import { FrontendPage } from "../screens/frontend-page";
 
 type Props = { params: Promise<{ path: string[] }> };
 export function generateStaticParams() {
-  return Object.keys(pageDefinitions).filter((path) => pageDefinitions[path]?.kind !== 'account').map((path) => ({
+  return Object.keys(pageDefinitions).filter((path) => pageDefinitions[path]?.kind !== 'account' && path !== 'casino').map((path) => ({
     path: path.split("/"),
   }));
 }

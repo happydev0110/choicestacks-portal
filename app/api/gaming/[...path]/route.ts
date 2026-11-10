@@ -10,7 +10,7 @@ async function forward(
   const route = path.join("/");
   const uuid = "[a-fA-F0-9-]{36}";
   const method =
-    route === "games" ||
+    route === "games" || route === "lobby" ||
     route === "wallet" ||
     new RegExp(`^games/${uuid}$`).test(route)
       ? "GET"

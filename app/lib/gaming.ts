@@ -32,6 +32,9 @@ export type ProviderCatalogData = {
     lastSuccessAt: string | null;
   };
 };
+export type ProviderLobbyData = ProviderCatalogData & {
+  sections: { category: string; total: number; games: ProviderGame[] }[];
+};
 export type SandboxWalletData = {
   currency: string;
   balance: string;

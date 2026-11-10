@@ -29,7 +29,8 @@ export const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 export const categoryLinks = [
-  ["All Games", "/casino"],
+  ["All Games", "/all-games"],
+  ["Featured Games", "/featured"],
   ["New Games", "/new-games"],
   ["Slots", "/slots"],
   ["Live Casino", "/live"],
@@ -140,7 +141,7 @@ for (const offer of promotionOffers)
 export const labelRoutes: Record<string, string> = {
   Home: "/",
   Casino: "/casino",
-  "All Games": "/casino",
+  "All Games": "/all-games",
   "New Games": "/new-games",
   Slots: "/slots",
   "Live Casino": "/live",

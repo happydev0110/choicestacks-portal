@@ -11,6 +11,7 @@ const manifest = JSON.parse(
 const routes = Object.keys(manifest.routes).filter(
   (route) => !route.startsWith("/_"),
 );
+if (!routes.includes('/casino')) routes.push('/casino');
 const catalogResponse = await fetch(new URL('/api/gaming/games', origin));
 if (!catalogResponse.ok) throw new Error(`Catalog request failed: ${catalogResponse.status}`);
 const { data: catalog } = await catalogResponse.json();
@@ -41,6 +42,8 @@ async function worker() {
         continue;
       }
       const html = await response.text();
+      if (path === '/casino' && (!html.includes('casino-lobby') || !html.includes('casino-slots-heading') || /<h1[^>]*>Provider Games<\/h1>/.test(html)))
+        failures.push('Casino must server-render the permanent category lobby.');
       const expectedGameName = expectedGameNames.get(path);
       const escapeHtml = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
       if (expectedGameName && !html.includes(`<h1>${escapeHtml(expectedGameName)}</h1>`))
@@ -66,9 +69,7 @@ async function worker() {
   }
 }
 await Promise.all(Array.from({ length: 4 }, worker));
-for (const path of linkedPaths)
-  if (!routes.includes(path) && !protectedRoutes.includes(path))
-    failures.push(`Internal link has no generated route: ${path}`);
+const catalogIds = new Set(catalog.games.map((game) => game.uuid));
 for (const path of [
   "/this-page-does-not-exist",
   "/games/unknown-title",
@@ -90,6 +91,7 @@ if (catalog.configured && catalog.total) {
     for (const game of data.games) {
       if (seen.has(game.uuid)) failures.push(`Duplicate catalog game: ${game.uuid}`);
       seen.add(game.uuid);
+      catalogIds.add(game.uuid);
     }
   }
   if (seen.size !== catalog.total) failures.push(`Only ${seen.size}/${catalog.total} games are reachable by pagination.`);
@@ -100,6 +102,9 @@ if (catalog.configured && catalog.total) {
   }
   console.log(`All ${seen.size} provider games are reachable through the portal API.`);
 }
+for (const path of linkedPaths)
+  if (!routes.includes(path) && !protectedRoutes.includes(path) && !(path.startsWith('/games/') && catalogIds.has(path.slice(7))))
+    failures.push(`Internal link has no generated route: ${path}`);
 console.log(
   `${routes.length} public pages, ${protectedRoutes.length} protected pages and ${linkedPaths.size} internal link destinations checked at ${origin}.`,
 );

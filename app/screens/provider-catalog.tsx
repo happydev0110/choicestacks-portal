@@ -148,7 +148,7 @@ export function ProviderCatalog({
             className={
               !favoritesOnly &&
               !initialProvider &&
-              (category ? path === `/${category}` : path === "/casino")
+              (category ? path === `/${category}` : path === "/all-games")
                 ? "active"
                 : ""
             }
