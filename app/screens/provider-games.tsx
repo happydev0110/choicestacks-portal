@@ -132,7 +132,7 @@ export function ProviderGamePlayer({
         <div className={styles.state} aria-busy={opening}>
           <div className={styles.message}>
             {opening && <LoaderCircle className={styles.spinner} size={34} aria-hidden="true" />}
-            <h2 aria-live="polite">{!launchEnabled ? "Game temporarily unavailable" : failed ? "Unable to open game" : "Loading"}</h2>
+            <h2 aria-live="polite">{!launchEnabled ? "Game temporarily unavailable" : failed ? "Unable to open game" : "LOADING..."}</h2>
             {!launchEnabled ? (
               <p>Sandbox play is not available yet. Please try again later.</p>
             ) : failed && state.status === "failed" ? (
