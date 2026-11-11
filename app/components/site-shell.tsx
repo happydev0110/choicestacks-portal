@@ -16,6 +16,7 @@ import { Sidebar } from "./sidebar";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { GameShell } from "./game-shell";
+import { WalletModal } from "./wallet-modal";
 
 const SiteContext = createContext<{
   navigate: (label: string) => void;
@@ -177,6 +178,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           </button>
         </div>
       </dialog>
+      <WalletModal />
     </SiteContext.Provider>
   );
 }

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Maximize, Minimize, X } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
+import { useWalletModal, WalletModal } from "./wallet-modal";
 import styles from "./game-shell.module.css";
 
 export function GameShell({ children, returnHref }: {
@@ -12,6 +13,7 @@ export function GameShell({ children, returnHref }: {
   returnHref: string;
 }) {
   const router = useRouter();
+  const { openWallet, request } = useWalletModal();
   const container = useRef<HTMLDivElement>(null);
   const changingFullscreen = useRef(false);
   const [fullscreen, setFullscreen] = useState(false);
@@ -42,7 +44,7 @@ export function GameShell({ children, returnHref }: {
         await document.exitFullscreen();
       } else {
         if (!container.current?.requestFullscreen) throw new Error();
-        // Fullscreen the entire shell so Wallet and Close stay accessible.
+        // Fullscreen the entire shell so Deposit, its dialog and Close stay accessible.
         await container.current.requestFullscreen();
       }
     } catch {
@@ -70,10 +72,8 @@ export function GameShell({ children, returnHref }: {
           onNavigate={(event) => { event.preventDefault(); void leave("/"); }}>
           <BrandLogo />
         </Link>
-        <Link href="/account/wallet" className={styles.wallet}
-          onNavigate={(event) => { event.preventDefault(); void leave("/account/wallet"); }}>
-          Wallet
-        </Link>
+        <button type="button" className={styles.wallet} aria-haspopup="dialog" aria-expanded={Boolean(request)}
+          onClick={(event) => openWallet(event.currentTarget)}>Deposit</button>
         <div className={styles.controls}>
           <button type="button" className={styles.iconButton}
             aria-label={fullscreenLabel} title={fullscreenLabel}
@@ -89,6 +89,7 @@ export function GameShell({ children, returnHref }: {
         </div>
       </header>
       <main id="main-content" className={styles.main}>{children}</main>
+      <WalletModal />
       {error && (
         <div className={styles.notice}>
           <p role="alert">{error}</p>

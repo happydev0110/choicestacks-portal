@@ -18,7 +18,7 @@
 .balanceValue { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .currency { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #1b284b; border: 1px solid #23335b; font-size: 12px; flex-shrink: 0; }
 .amount { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; max-width: 155px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.addFunds { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #3bde7e; color: #fff; flex-shrink: 0; }
+.addFunds { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: #3bde7e; color: #fff; flex-shrink: 0; }
 .addFunds:hover { background: #54ed91; }
 .profile { gap: 9px; padding: 3px 16px 3px 3px; height: 40px; color: #fff; font-weight: 700; }
 .avatar { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; border: 1px solid #36718d; background: linear-gradient(135deg, #164663, #0b2038); color: #81e3f5; font-size: 12px; letter-spacing: .03em; }

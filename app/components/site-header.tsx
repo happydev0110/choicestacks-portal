@@ -7,6 +7,7 @@ import { Bell, Coins, LogOut, Plus, ReceiptText, Search, Trophy, UserRound, Wall
 import { BrandLogo } from "./brand-logo";
 import { usePlayer } from "./player-auth";
 import { useGameWallet } from "./game-wallet";
+import { useWalletModal } from "./wallet-modal";
 import styles from "./site-header.module.css";
 
 const accountItems = [
@@ -20,6 +21,7 @@ type Panel = "account" | "notifications" | null;
 export function SiteHeader() {
   const { player, loading, logout } = usePlayer();
   const { wallet, error: walletError } = useGameWallet();
+  const { openWallet, request } = useWalletModal();
   const pathname = usePathname();
   const router = useRouter();
   const [panel, setPanel] = useState<Panel>(null);
@@ -97,7 +99,9 @@ export function SiteHeader() {
             <span className={styles.currency} aria-hidden="true">{currencySymbol ?? <Coins size={14} />}</span>
             <span className={styles.amount}>{wallet?.balance ?? (walletError ? "—" : "…")}</span>
           </Link>
-          <Link href="/account/wallet" className={styles.addFunds} aria-label="Open wallet"><Plus size={23} strokeWidth={3} /></Link>
+          <button type="button" className={styles.addFunds} aria-label="Open deposit wallet" title="Deposit"
+            aria-haspopup="dialog" aria-expanded={Boolean(request)}
+            onClick={(event) => { setPanel(null); openWallet(event.currentTarget); }}><Plus size={23} strokeWidth={3} aria-hidden="true" /></button>
         </div>}
       </div>
       <div className={styles.actions}>

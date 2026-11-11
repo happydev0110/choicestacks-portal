@@ -5,6 +5,7 @@ import { SiteShell } from "./components/site-shell";
 import { PlayerAuthProvider } from "./components/player-auth";
 import { GameWalletProvider } from "./components/game-wallet";
 import { ToastProvider } from "./components/toast-provider";
+import { WalletModalProvider } from "./components/wallet-modal";
 export const metadata: Metadata = {
   title: "choicestakes",
   description:
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <ToastProvider><PlayerAuthProvider><GameWalletProvider><SiteShell>{children}</SiteShell></GameWalletProvider></PlayerAuthProvider></ToastProvider>
+        <ToastProvider><PlayerAuthProvider><GameWalletProvider><WalletModalProvider><SiteShell>{children}</SiteShell></WalletModalProvider></GameWalletProvider></PlayerAuthProvider></ToastProvider>
       </body>
     </html>
   );
