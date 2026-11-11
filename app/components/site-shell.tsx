@@ -15,6 +15,7 @@ import { labelRoutes, pageDefinitions } from "../site-map";
 import { Sidebar } from "./sidebar";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
+import { GameShell } from "./game-shell";
 
 const SiteContext = createContext<{
   navigate: (label: string) => void;
@@ -23,6 +24,7 @@ export const useSite = () => useContext(SiteContext);
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
+  const gameReturnHref = useRef("/casino");
   const [menu, setMenu] = useState(false);
   const [cookies, setCookies] = useState(false);
   const [preferences, setPreferences] = useState(false);
@@ -33,6 +35,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   }, []);
   useEffect(() => {
     setMenu(false);
+    const kind = pageDefinitions[pathname.slice(1)]?.kind;
+    if (pathname === "/" || kind === "casino" || kind === "catalog" || kind === "providers" ||
+        pathname.startsWith("/providers/") || pathname.startsWith("/games/") ||
+        pathname === "/provider-games" || pathname === "/account/favorites") {
+      gameReturnHref.current = window.location.pathname + window.location.search + window.location.hash;
+    }
   }, [pathname]);
   const navigate = (label: string) => {
     setMenu(false);
@@ -53,6 +61,11 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     setCookies(false);
     setPreferences(false);
   };
+  if (pathname.startsWith("/play/")) {
+    return <SiteContext.Provider value={{ navigate }}>
+      <GameShell returnHref={gameReturnHref.current}>{children}</GameShell>
+    </SiteContext.Provider>;
+  }
   return (
     <SiteContext.Provider
       value={{ navigate }}

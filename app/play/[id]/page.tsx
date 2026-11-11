@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { currentPlayer } from "../../lib/auth-server";
 import type { ProviderGame } from "../../lib/gaming";
-import { ProviderGamePlayer } from "../../screens/provider-games";
+import { GamePlayerUnavailable, ProviderGamePlayer } from "../../screens/provider-games";
 export const dynamic = "force-dynamic";
 export default async function Page({
   params,
@@ -21,10 +20,7 @@ export default async function Page({
     player = await currentPlayer();
   } catch {
     return (
-      <div className="page-wrap panel">
-        <h1>Account temporarily unavailable</h1>
-        <p>Please try again shortly.</p>
-      </div>
+      <GamePlayerUnavailable title="Account temporarily unavailable" message="Please try again shortly." />
     );
   }
   if (!player) redirect("/login?next=" + encodeURIComponent("/play/" + id));
@@ -36,20 +32,13 @@ export default async function Page({
     );
   } catch {
     return (
-      <div className="page-wrap panel">
-        <h1>Game temporarily unavailable</h1>
-        <Link href="/provider-games">Back to games</Link>
-      </div>
+      <GamePlayerUnavailable title="Game temporarily unavailable" message="Please return to the collection and try again later." />
     );
   }
   if (response.status === 404) notFound();
   if (!response.ok)
     return (
-      <div className="page-wrap panel">
-        <h1>Game temporarily unavailable</h1>
-        <p>Please return to the collection and try again later.</p>
-        <Link href="/provider-games">Browse games</Link>
-      </div>
+      <GamePlayerUnavailable title="Game temporarily unavailable" message="Please return to the collection and try again later." />
     );
   const { data } = (await response.json()) as {
     data: { game: ProviderGame; launchEnabled: boolean };

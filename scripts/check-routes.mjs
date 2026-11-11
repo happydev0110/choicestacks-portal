@@ -9,7 +9,8 @@ const manifest = JSON.parse(
   ),
 );
 const routes = Object.keys(manifest.routes).filter(
-  (route) => !route.startsWith("/_"),
+  // Next's generated favicon is an image response, not an HTML page.
+  (route) => !route.startsWith("/_") && route !== "/icon.png",
 );
 if (!routes.includes('/casino')) routes.push('/casino');
 const catalogResponse = await fetch(new URL('/api/gaming/games', origin));

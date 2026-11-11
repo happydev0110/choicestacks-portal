@@ -1,0 +1,81 @@
+.player {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #000;
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+.state {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 32px 20px;
+  background: #000;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+}
+
+.message h1,
+.message h2 {
+  font-size: clamp(20px, 3vw, 26px);
+}
+
+.message p {
+  color: #a7b6cb;
+  font-size: 14px;
+}
+
+.message .error {
+  color: #ff9dab;
+}
+
+.spinner {
+  color: #42d3ec;
+  animation: spin 1s linear infinite;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.back {
+  color: #55d7f1;
+  padding: 8px;
+  font-size: 13px;
+  text-underline-offset: 4px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}
