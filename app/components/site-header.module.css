@@ -53,8 +53,9 @@
   .profile { width: 40px; padding: 3px; }
 }
 @media (max-width: 700px) {
-  .header:global(.header) { height: 57px; padding: 0 12px; gap: 8px; grid-template-columns: auto minmax(0, 1fr) auto; }
-  .brand { width: 125px; }
+  /* Equal side tracks keep the balance at the header's true midpoint. */
+  .header:global(.header) { height: 57px; padding: 0 12px; gap: 8px; }
+  .brand { width: 44px; height: 44px; }
   .actions { gap: 7px; }
   .search { display: none; }
   .circle, .profile { width: 34px; height: 34px; }
@@ -71,7 +72,6 @@
 }
 @media (max-width: 360px) {
   .header:global(.header) { padding-inline: 8px; gap: 6px; }
-  .brand { width: 105px; }
   .actions { gap: 5px; }
   .amount { max-width: 62px; }
   .circle, .profile { width: 32px; height: 32px; }
