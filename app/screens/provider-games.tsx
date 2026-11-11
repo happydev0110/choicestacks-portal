@@ -132,16 +132,12 @@ export function ProviderGamePlayer({
         <div className={styles.state} aria-busy={opening}>
           <div className={styles.message}>
             {opening && <LoaderCircle className={styles.spinner} size={34} aria-hidden="true" />}
-            <h2>{!launchEnabled ? "Game temporarily unavailable" : failed ? "Unable to open game" : "Opening game…"}</h2>
+            <h2 aria-live="polite">{!launchEnabled ? "Game temporarily unavailable" : failed ? "Unable to open game" : "Loading"}</h2>
             {!launchEnabled ? (
               <p>Sandbox play is not available yet. Please try again later.</p>
             ) : failed && state.status === "failed" ? (
               <p className={styles.error} role="alert">{state.message}</p>
-            ) : (
-              <p role="status" aria-live="polite">
-                {authenticated ? "Opening your game session…" : "Checking your player session…"}
-              </p>
-            )}
+            ) : null}
             {failed && launchEnabled && authenticated && (
               <>
                 <div className={styles.actions}>
@@ -151,7 +147,7 @@ export function ProviderGamePlayer({
                 <p>Retry opens a new session. Demo mode availability depends on the provider.</p>
               </>
             )}
-            <Link className={styles.back} href="/casino">Back to games</Link>
+            <Link className={styles.back} href="/casino">Back</Link>
           </div>
         </div>
       )}
@@ -164,7 +160,7 @@ export function GamePlayerUnavailable({ title, message }: { title: string; messa
     <div className={styles.message}>
       <h1>{title}</h1>
       <p>{message}</p>
-      <Link className={styles.back} href="/casino">Back to games</Link>
+      <Link className={styles.back} href="/casino">Back</Link>
     </div>
   </section>;
 }
